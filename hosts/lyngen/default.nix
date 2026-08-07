@@ -9,6 +9,7 @@
     ../common/optional/hyprland.nix
     ../common/optional/noctalia.nix
     ../common/optional/removable-media.nix
+    ../common/optional/thunar.nix
     ../common/users/tanren.nix
   ];
 

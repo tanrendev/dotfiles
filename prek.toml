@@ -23,3 +23,11 @@ name = "nixfmt"
 language = "system"
 entry = "nixfmt --check"
 files = '\.nix$'
+
+[[repos.hooks]]
+id = "statix"
+name = "statix"
+language = "system"
+entry = "statix check ."
+pass_filenames = false
+files = '\.nix$'

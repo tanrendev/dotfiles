@@ -31,12 +31,19 @@
               find . -name '*.nix' -exec nixfmt --check {} +
               touch $out
             '';
+
+        statix = pkgs.runCommand "statix" { nativeBuildInputs = [ pkgs.statix ]; } ''
+          cd ${self}
+          statix check .
+          touch $out
+        '';
       });
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
           packages = with pkgs; [
             nixfmt
+            statix
             prek
           ];
         };

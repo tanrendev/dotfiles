@@ -3,6 +3,7 @@
     ./browsers.nix
     ./hyprland.nix
     ./kitty.nix
+    ./media.nix
     ./noctalia.nix
     ./shell.nix
   ];

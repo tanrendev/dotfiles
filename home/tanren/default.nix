@@ -1,5 +1,6 @@
 {
   imports = [
+    ./browsers.nix
     ./hyprland.nix
     ./kitty.nix
     ./noctalia.nix

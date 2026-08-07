@@ -1,5 +1,8 @@
 {
-  imports = [ ./noctalia.nix ];
+  imports = [
+    ./hyprland.nix
+    ./noctalia.nix
+  ];
 
   home = {
     username = "tanren";

@@ -6,4 +6,6 @@
       "networkmanager"
     ];
   };
+
+  home-manager.users.tanren = import ../../../home/tanren;
 }

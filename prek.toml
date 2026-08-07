@@ -31,3 +31,10 @@ language = "system"
 entry = "statix check ."
 pass_filenames = false
 files = '\.nix$'
+
+[[repos.hooks]]
+id = "deadnix"
+name = "deadnix"
+language = "system"
+entry = "deadnix --fail --warn-used-underscore"
+files = '\.nix$'

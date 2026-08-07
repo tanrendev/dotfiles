@@ -37,6 +37,12 @@
           statix check .
           touch $out
         '';
+
+        deadnix = pkgs.runCommand "deadnix" { nativeBuildInputs = [ pkgs.deadnix ]; } ''
+          cd ${self}
+          deadnix --fail --warn-used-underscore .
+          touch $out
+        '';
       });
 
       devShells = forAllSystems (pkgs: {
@@ -44,6 +50,7 @@
           packages = with pkgs; [
             nixfmt
             statix
+            deadnix
             prek
           ];
         };

@@ -7,6 +7,7 @@
     ./noctalia.nix
     ./removable-media.nix
     ./shell.nix
+    ./xdg.nix
   ];
 
   home = {

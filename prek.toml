@@ -13,3 +13,13 @@ hooks = [
   { id = "detect-private-key" },
   { id = "mixed-line-ending" },
 ]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "nixfmt"
+name = "nixfmt"
+language = "system"
+entry = "nixfmt --check"
+files = '\.nix$'

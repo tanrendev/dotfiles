@@ -1,0 +1,4 @@
+rules:
+  undocumented-permissions:
+    ignore:
+      - update-flake-lock.yml

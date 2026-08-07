@@ -51,6 +51,7 @@
             nixfmt
             statix
             deadnix
+            zizmor
             prek
           ];
         };

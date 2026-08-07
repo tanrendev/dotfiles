@@ -38,3 +38,10 @@ name = "deadnix"
 language = "system"
 entry = "deadnix --fail --warn-used-underscore"
 files = '\.nix$'
+
+[[repos.hooks]]
+id = "zizmor"
+name = "zizmor"
+language = "system"
+entry = "zizmor --no-progress --persona=pedantic"
+files = '^\.github/workflows/'

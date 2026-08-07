@@ -6,7 +6,7 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }:
+    { self, nixpkgs, ... }@inputs:
     let
       systems = [
         "x86_64-linux"
@@ -44,6 +44,11 @@
           touch $out
         '';
       });
+
+      nixosConfigurations.lyngen = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [ ./hosts/lyngen ];
+      };
 
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {

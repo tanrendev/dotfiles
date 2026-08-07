@@ -1,7 +1,9 @@
 {
   imports = [
     ./hyprland.nix
+    ./kitty.nix
     ./noctalia.nix
+    ./shell.nix
   ];
 
   home = {

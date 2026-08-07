@@ -5,6 +5,7 @@
     ./kitty.nix
     ./media.nix
     ./noctalia.nix
+    ./removable-media.nix
     ./shell.nix
   ];
 

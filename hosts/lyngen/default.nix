@@ -8,6 +8,7 @@
     ../common/optional/greeter.nix
     ../common/optional/hyprland.nix
     ../common/optional/noctalia.nix
+    ../common/optional/removable-media.nix
     ../common/users/tanren.nix
   ];
 

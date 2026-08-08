@@ -4,6 +4,7 @@
     ./cursor.nix
     ./dev.nix
     ./editors.nix
+    ./fuzzel.nix
     ./graphics.nix
     ./hyprland.nix
     ./kitty.nix

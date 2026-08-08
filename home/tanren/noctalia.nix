@@ -23,8 +23,15 @@
         builtin = "Catppuccin";
 
         templates.builtin_ids = [
+          "btop"
+          "cava"
           "gtk3"
           "gtk4"
+          "helix"
+          "hyprland"
+          "kitty"
+          "qt"
+          "starship"
         ];
       };
 

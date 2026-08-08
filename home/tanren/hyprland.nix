@@ -207,7 +207,7 @@ in
         (mouseBind "Resize window" "mouse:273" "hl.dsp.window.resize()")
         (plainBind "Cycle windows" "ALT + Tab" "hl.dsp.window.cycle_next()")
         (plainBind "Cycle windows backwards" "ALT + SHIFT + Tab"
-          "hl.dsp.window.cycle_next({ prev = true })"
+          "hl.dsp.window.cycle_next({ next = false })"
         )
         (plainBind "Screenshot screen" "Print" (msg "screenshot-fullscreen"))
       ]

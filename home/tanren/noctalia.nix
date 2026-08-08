@@ -15,6 +15,7 @@
       shell = {
         polkit_agent = true;
         clipboard_enabled = true;
+        launch_apps_as_systemd_services = true;
       };
 
       theme = {

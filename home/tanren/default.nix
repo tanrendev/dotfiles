@@ -1,6 +1,7 @@
 {
   imports = [
     ./browsers.nix
+    ./cursor.nix
     ./dev.nix
     ./editors.nix
     ./hyprland.nix

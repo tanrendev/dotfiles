@@ -56,6 +56,8 @@
         };
       };
 
+      plugin_settings."noctalia/mpvpaper".video_directory = "~/Videos/Wallpapers";
+
       plugins = {
         enabled = [
           "noctalia/mpvpaper"

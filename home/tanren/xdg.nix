@@ -11,4 +11,5 @@
   };
 
   home.file."Pictures/Wallpapers/.keep".text = "";
+  home.file."Videos/Wallpapers/.keep".text = "";
 }

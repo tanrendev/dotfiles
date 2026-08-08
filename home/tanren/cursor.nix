@@ -12,6 +12,7 @@ let
 in
 {
   home.pointerCursor = {
+    enable = true;
     inherit name size;
     package = pkgs.catppuccin-cursors.mochaDark;
   };

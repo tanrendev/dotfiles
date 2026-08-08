@@ -13,6 +13,7 @@
     ./pdf.nix
     ./removable-media.nix
     ./shell.nix
+    ./vesktop.nix
     ./xdg.nix
   ];
 

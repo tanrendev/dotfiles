@@ -8,6 +8,7 @@
     ./kitty.nix
     ./media.nix
     ./noctalia.nix
+    ./pdf.nix
     ./removable-media.nix
     ./shell.nix
     ./xdg.nix

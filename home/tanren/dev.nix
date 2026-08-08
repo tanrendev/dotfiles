@@ -15,6 +15,7 @@
     bun
     deadnix
     gcc
+    glab
     gnumake
     go
     godot

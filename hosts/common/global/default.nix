@@ -13,6 +13,7 @@
     ./network.nix
     ./nix.nix
     ./noctalia.nix
+    ./power.nix
     ./removable-media.nix
     ./swap.nix
     ./thunar.nix

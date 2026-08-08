@@ -6,8 +6,9 @@
     isNormalUser = true;
     shell = pkgs.fish;
     extraGroups = [
-      "wheel"
+      "docker"
       "networkmanager"
+      "wheel"
     ];
   };
 

@@ -4,6 +4,7 @@
     ../common/global
     ../common/optional/audio.nix
     ../common/optional/codecs.nix
+    ../common/optional/dev.nix
     ../common/optional/fonts.nix
     ../common/optional/greeter.nix
     ../common/optional/hyprland.nix

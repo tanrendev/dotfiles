@@ -1,6 +1,8 @@
 {
   imports = [
     ./browsers.nix
+    ./dev.nix
+    ./editors.nix
     ./hyprland.nix
     ./kitty.nix
     ./media.nix

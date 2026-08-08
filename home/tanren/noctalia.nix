@@ -60,7 +60,6 @@
         enabled = [
           "noctalia/mpvpaper"
           "noctalia/screen_recorder"
-          "noctalia/wallhaven"
         ];
         auto_update = false;
         source = [

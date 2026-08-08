@@ -7,6 +7,7 @@
 
     systemPackages = with pkgs; [
       ffmpeg-full
+      intel-gpu-tools
       libva-utils
     ];
   };

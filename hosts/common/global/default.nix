@@ -10,6 +10,7 @@
     ./home-manager.nix
     ./hyprland.nix
     ./locale.nix
+    ./monitoring.nix
     ./network.nix
     ./nix.nix
     ./noctalia.nix

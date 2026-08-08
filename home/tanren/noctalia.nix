@@ -2,7 +2,10 @@
 {
   imports = [ inputs.noctalia.homeModules.default ];
 
-  home.packages = [ pkgs.mpvpaper ];
+  home.packages = with pkgs; [
+    adw-gtk3
+    mpvpaper
+  ];
 
   programs.noctalia = {
     enable = true;
@@ -18,6 +21,11 @@
         mode = "dark";
         source = "builtin";
         builtin = "Catppuccin";
+
+        templates.builtin_ids = [
+          "gtk3"
+          "gtk4"
+        ];
       };
 
       location.auto_locate = true;

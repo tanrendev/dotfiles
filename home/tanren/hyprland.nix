@@ -1,6 +1,12 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 let
   lua = lib.generators.mkLuaInline;
+
+  exec = cmd: ''hl.dsp.exec_cmd("${cmd}")'';
+
+  msg = cmd: exec "noctalia msg ${cmd}";
+
+  panel = name: msg "panel-toggle ${name}";
 
   bind = keys: dsp: {
     _args = [
@@ -9,15 +15,28 @@ let
     ];
   };
 
-  mediaKey = key: cmd: {
+  mouseBind = keys: dsp: {
     _args = [
-      key
-      (lua ''hl.dsp.exec_cmd("noctalia msg ${cmd}")'')
-      { locked = true; }
+      (lua ''mod .. " + ${keys}"'')
+      (lua dsp)
+      { mouse = true; }
     ];
   };
 
-  panel = name: ''hl.dsp.exec_cmd("noctalia msg panel-toggle ${name}")'';
+  plainBind = keys: dsp: {
+    _args = [
+      keys
+      (lua dsp)
+    ];
+  };
+
+  lockedKey = key: cmd: {
+    _args = [
+      key
+      (lua (exec cmd))
+      { locked = true; }
+    ];
+  };
 
   directions = [
     "left"
@@ -32,6 +51,11 @@ let
   ]) (lib.range 1 8);
 in
 {
+  home.packages = with pkgs; [
+    hyprpicker
+    playerctl
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = null;
@@ -118,29 +142,54 @@ in
       };
 
       bind = [
-        (bind "Return" ''hl.dsp.exec_cmd("kitty")'')
+        (bind "Return" (exec "kitty"))
+        (bind "E" (exec "thunar"))
+        (bind "Y" (exec "kitty -e yazi"))
+        (bind "B" (exec "librewolf"))
+        (bind "C" (exec "hyprpicker -a"))
         (bind "Q" "hl.dsp.window.close()")
         (bind "F" "hl.dsp.window.fullscreen()")
         (bind "V" "hl.dsp.window.float()")
-        (bind "Tab" ''hl.dsp.exec_cmd("noctalia msg window-switcher")'')
+        (bind "Tab" (msg "window-switcher"))
         (bind "Space" (panel "launcher"))
         (bind "S" (panel "control-center"))
         (bind "SHIFT + V" (panel "clipboard"))
         (bind "W" (panel "wallpaper"))
         (bind "Escape" (panel "session"))
-        (bind "L" ''hl.dsp.exec_cmd("noctalia msg session lock")'')
+        (bind "L" (msg "session lock"))
         (bind "SHIFT + Q" "hl.dsp.exit()")
+        (bind "SHIFT + S" (msg "screenshot-region"))
+        (bind "comma" (msg "notification-clear-active"))
+        (bind "SHIFT + comma" (msg "notification-clear-history"))
+        (bind "CTRL + comma" (msg "notification-dnd-toggle"))
+        (bind "grave" "hl.dsp.workspace.toggle_special()")
+        (bind "SHIFT + grave" ''hl.dsp.window.move({ workspace = "special" })'')
+        (bind "bracketleft" ''hl.dsp.focus({ workspace = "e-1" })'')
+        (bind "bracketright" ''hl.dsp.focus({ workspace = "e+1" })'')
+        (bind "SHIFT + bracketleft" ''hl.dsp.window.move({ workspace = "e-1" })'')
+        (bind "SHIFT + bracketright" ''hl.dsp.window.move({ workspace = "e+1" })'')
+        (bind "CTRL + Tab" ''hl.dsp.focus({ workspace = "previous" })'')
+        (bind "mouse_up" ''hl.dsp.focus({ workspace = "e-1" })'')
+        (bind "mouse_down" ''hl.dsp.focus({ workspace = "e+1" })'')
+        (mouseBind "mouse:272" "hl.dsp.window.drag()")
+        (mouseBind "mouse:273" "hl.dsp.window.resize()")
+        (plainBind "ALT + Tab" "hl.dsp.window.cycle_next()")
+        (plainBind "ALT + SHIFT + Tab" "hl.dsp.window.cycle_next({ prev = true })")
+        (plainBind "Print" (msg "screenshot-fullscreen"))
       ]
       ++ map (d: bind d ''hl.dsp.focus({ direction = "${d}" })'') directions
       ++ map (d: bind "SHIFT + ${d}" ''hl.dsp.window.move({ direction = "${d}" })'') directions
       ++ workspaceBinds
       ++ [
-        (mediaKey "XF86AudioRaiseVolume" "volume-up")
-        (mediaKey "XF86AudioLowerVolume" "volume-down")
-        (mediaKey "XF86AudioMute" "volume-mute")
-        (mediaKey "XF86AudioMicMute" "mic-mute")
-        (mediaKey "XF86MonBrightnessUp" "brightness-up")
-        (mediaKey "XF86MonBrightnessDown" "brightness-down")
+        (lockedKey "XF86AudioRaiseVolume" "noctalia msg volume-up")
+        (lockedKey "XF86AudioLowerVolume" "noctalia msg volume-down")
+        (lockedKey "XF86AudioMute" "noctalia msg volume-mute")
+        (lockedKey "XF86AudioMicMute" "noctalia msg mic-mute")
+        (lockedKey "XF86MonBrightnessUp" "noctalia msg brightness-up")
+        (lockedKey "XF86MonBrightnessDown" "noctalia msg brightness-down")
+        (lockedKey "XF86AudioPlay" "playerctl play-pause")
+        (lockedKey "XF86AudioNext" "playerctl next")
+        (lockedKey "XF86AudioPrev" "playerctl previous")
       ];
     };
   };

@@ -2,15 +2,7 @@
   imports = [
     ./hardware.nix
     ../common/global
-    ../common/optional/audio.nix
-    ../common/optional/codecs.nix
-    ../common/optional/dev.nix
-    ../common/optional/fonts.nix
-    ../common/optional/greeter.nix
-    ../common/optional/hyprland.nix
-    ../common/optional/noctalia.nix
-    ../common/optional/removable-media.nix
-    ../common/optional/thunar.nix
+    ../common/optional/intel-media.nix
     ../common/users/tanren.nix
   ];
 

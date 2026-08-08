@@ -1,6 +1,7 @@
 {
   imports = [
     ./browsers.nix
+    ./chat.nix
     ./cursor.nix
     ./dev.nix
     ./editors.nix
@@ -13,7 +14,6 @@
     ./pdf.nix
     ./removable-media.nix
     ./shell.nix
-    ./vesktop.nix
     ./xdg.nix
   ];
 

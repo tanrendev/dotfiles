@@ -23,6 +23,11 @@
       ignoreCase = true;
     };
 
+    nix-your-shell = {
+      enable = true;
+      nix-output-monitor.enable = true;
+    };
+
     fzf = {
       enable = true;
       historyWidget.command = "";

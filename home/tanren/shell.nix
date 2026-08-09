@@ -18,6 +18,11 @@
     starship.enable = true;
     zoxide.enable = true;
 
+    carapace = {
+      enable = true;
+      ignoreCase = true;
+    };
+
     fzf = {
       enable = true;
       historyWidget.command = "";

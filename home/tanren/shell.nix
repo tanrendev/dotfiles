@@ -86,6 +86,7 @@
     fd
     jq
     p7zip
+    sd
     unzip
     wl-clipboard
     zip

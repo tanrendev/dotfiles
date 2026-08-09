@@ -181,6 +181,7 @@ in
         (bind "Control center" "S" (panel "control-center"))
         (bind "Clipboard history" "SHIFT + V" (panel "clipboard"))
         (bind "Wallpaper picker" "W" (panel "wallpaper"))
+        (bind "Toggle light and dark" "T" (msg "theme-mode-toggle"))
         (bind "Session menu" "Escape" (panel "session"))
         (bind "Lock screen" "L" (msg "session lock"))
         (bind "Exit Hyprland" "SHIFT + Q" "hl.dsp.exit()")

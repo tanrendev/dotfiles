@@ -28,6 +28,31 @@
     vscode = {
       enable = true;
       mutableExtensionsDir = true;
+      profiles.default.userSettings = {
+        "extensions.autoUpdate" = false;
+        "extensions.autoCheckUpdates" = false;
+        "extensions.ignoreRecommendations" = true;
+        "telemetry.telemetryLevel" = "off";
+        "workbench.enableExperiments" = false;
+        "workbench.settings.enableNaturalLanguageSearch" = false;
+        "update.mode" = "none";
+        "update.showReleaseNotes" = false;
+        "npm.fetchOnlinePackageInfo" = false;
+        "gitlens.telemetry.enabled" = false;
+        "redhat.telemetry.enabled" = false;
+        "claudeCode.preferredLocation" = "panel";
+        "git.confirmSync" = false;
+        "json.schemaDownload.trustedDomains" = {
+          "https://schemastore.azurewebsites.net/" = true;
+          "https://raw.githubusercontent.com/microsoft/vscode/" = true;
+          "https://raw.githubusercontent.com/devcontainers/spec/" = true;
+          "https://www.schemastore.org/" = true;
+          "https://json.schemastore.org/" = true;
+          "https://json-schema.org/" = true;
+          "https://developer.microsoft.com/json-schemas/" = true;
+          "https://biomejs.dev" = true;
+        };
+      };
       profiles.default.extensions =
         with pkgs.vscode-extensions;
         [

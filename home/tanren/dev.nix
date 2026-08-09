@@ -27,6 +27,7 @@
     nodejs
     nvd
     pkg-config
+    prek
     rustup
     shellcheck
     shfmt
@@ -35,5 +36,6 @@
     taplo
     uv
     yaml-language-server
+    zizmor
   ];
 }

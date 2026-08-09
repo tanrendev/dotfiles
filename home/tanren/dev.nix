@@ -24,6 +24,7 @@
     nil
     nix-output-monitor
     nixfmt
+    nodejs
     nvd
     pkg-config
     rustup

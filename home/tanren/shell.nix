@@ -85,6 +85,7 @@
   home.packages = with pkgs; [
     fd
     jq
+    ouch
     p7zip
     sd
     unzip

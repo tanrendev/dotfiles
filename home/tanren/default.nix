@@ -7,6 +7,7 @@
     ./editors.nix
     ./fuzzel.nix
     ./graphics.nix
+    ./gtk.nix
     ./hyprland.nix
     ./kitty.nix
     ./media.nix

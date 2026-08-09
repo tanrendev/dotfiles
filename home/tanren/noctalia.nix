@@ -2,10 +2,7 @@
 {
   imports = [ inputs.noctalia.homeModules.default ];
 
-  home.packages = with pkgs; [
-    adw-gtk3
-    mpvpaper
-  ];
+  home.packages = [ pkgs.mpvpaper ];
 
   programs.noctalia = {
     enable = true;

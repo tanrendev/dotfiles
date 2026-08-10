@@ -3,9 +3,13 @@
   runCommand,
   writeText,
   hyprcursor,
+  librsvg,
+  xcursorgen,
 }:
 let
   name = "grimoire-cursors";
+  size = 32;
+  px = f: toString (builtins.floor (builtins.fromJSON f * size + 0.5));
 
   arrow = {
     x = "0.22";
@@ -220,18 +224,38 @@ let
         '') s.over
       }define_size = 0, ${shape}.svg
     '';
+
+  indexTheme = writeText "index.theme" ''
+    [Icon Theme]
+    Name=${name}
+  '';
 in
-runCommand name { nativeBuildInputs = [ hyprcursor ]; } ''
-  mkdir -p work/hyprcursors out
-  cp ${manifest} work/manifest.hl
-  ${lib.concatStrings (
-    lib.mapAttrsToList (shape: s: ''
-      mkdir work/hyprcursors/${shape}
-      cp ${./svg}/${shape}.svg work/hyprcursors/${shape}/${shape}.svg
-      cp ${meta shape s} work/hyprcursors/${shape}/meta.hl
-    '') shapes
-  )}
-  hyprcursor-util --create work --output out
-  mkdir -p $out/share/icons
-  mv out/* $out/share/icons/${name}
-''
+runCommand name
+  {
+    nativeBuildInputs = [
+      hyprcursor
+      librsvg
+      xcursorgen
+    ];
+  }
+  ''
+    theme=$out/share/icons/${name}
+    mkdir -p work/hyprcursors out "$theme/cursors"
+    cp ${manifest} work/manifest.hl
+    cp ${indexTheme} "$theme/index.theme"
+    ${lib.concatStrings (
+      lib.mapAttrsToList (shape: s: ''
+        mkdir work/hyprcursors/${shape}
+        cp ${./svg}/${shape}.svg work/hyprcursors/${shape}/${shape}.svg
+        cp ${meta shape s} work/hyprcursors/${shape}/meta.hl
+        rsvg-convert -w ${toString size} -h ${toString size} ${./svg}/${shape}.svg -o ${shape}.png
+        echo "${toString size} ${px s.x} ${px s.y} ${shape}.png" > ${shape}.cfg
+        xcursorgen ${shape}.cfg "$theme/cursors/${shape}"
+        ${lib.concatMapStrings (o: ''
+          ln -s ${shape} "$theme/cursors/${o}"
+        '') s.over}
+      '') shapes
+    )}
+    hyprcursor-util --create work --output out
+    cp -r out/*/. "$theme"/
+  ''

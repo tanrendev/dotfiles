@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     aseprite
-    fontforge
+    fontforge-gtk
     gimp
     inkscape
   ];

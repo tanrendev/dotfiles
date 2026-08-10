@@ -1,12 +1,21 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [ inputs.noctalia.homeModules.default ];
 
   home.packages = [ pkgs.mpvpaper ];
 
+  xdg.configFile."noctalia/templates/fuzzel.ini".source = ./noctalia-templates/fuzzel.ini;
+
   programs.noctalia = {
     enable = true;
     systemd.enable = true;
+
+    customPalettes.grimoire = lib.importJSON ./noctalia-palettes/grimoire.json;
 
     settings = {
       shell = {
@@ -50,8 +59,8 @@
 
       theme = {
         mode = "dark";
-        source = "builtin";
-        builtin = "Catppuccin";
+        source = "custom";
+        custom_palette = "grimoire";
 
         templates.builtin_ids = [
           "btop"
@@ -64,6 +73,11 @@
           "qt"
           "starship"
         ];
+
+        templates.user.fuzzel = {
+          input_path = "templates/fuzzel.ini";
+          output_path = "~/.config/fuzzel/noctalia.ini";
+        };
       };
 
       location.auto_locate = true;

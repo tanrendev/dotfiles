@@ -111,24 +111,14 @@ in
         general = {
           gaps_in = 5;
           gaps_out = 10;
-          border_size = 1;
+          border_size = 3;
           layout = "dwindle";
         };
 
         decoration = {
-          rounding = 20;
-          rounding_power = 2;
-          blur = {
-            enabled = true;
-            size = 3;
-            passes = 2;
-            vibrancy = 0.1696;
-          };
-          shadow = {
-            enabled = true;
-            range = 4;
-            render_power = 3;
-          };
+          rounding = 0;
+          blur.enabled = false;
+          shadow.enabled = false;
         };
 
         input = {
@@ -145,7 +135,7 @@ in
           disable_splash_rendering = true;
         };
 
-        animations.enabled = true;
+        animations.enabled = false;
       };
 
       window_rule = {
@@ -155,15 +145,6 @@ in
           1080
           920
         ];
-      };
-
-      layer_rule = {
-        name = "noctalia";
-        match.namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$";
-        no_anim = true;
-        ignore_alpha = 0.5;
-        blur = true;
-        blur_popups = true;
       };
 
       bind = [

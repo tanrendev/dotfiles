@@ -13,7 +13,6 @@
 
   home.packages = with pkgs; [
     bun
-    deadnix
     gcc
     glab
     gnumake
@@ -23,19 +22,15 @@
     luaPackages.luacheck
     nil
     nix-output-monitor
-    nixfmt
     nodejs
     nvd
     pkg-config
-    prek
     rustup
     shellcheck
     shfmt
-    statix
     stylua
     taplo
     uv
     yaml-language-server
-    zizmor
   ];
 }

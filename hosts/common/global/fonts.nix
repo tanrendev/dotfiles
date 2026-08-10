@@ -2,6 +2,7 @@
 {
   fonts = {
     packages = with pkgs; [
+      departure-mono
       nerd-fonts.jetbrains-mono
       noto-fonts
       noto-fonts-cjk-sans

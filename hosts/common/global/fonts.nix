@@ -1,13 +1,15 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   fonts = {
-    packages = with pkgs; [
-      departure-mono
-      nerd-fonts.jetbrains-mono
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-color-emoji
-    ];
+    packages =
+      with pkgs;
+      [
+        departure-mono
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-color-emoji
+      ]
+      ++ builtins.filter lib.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
     fontconfig.defaultFonts = {
       monospace = [ "JetBrainsMono Nerd Font" ];

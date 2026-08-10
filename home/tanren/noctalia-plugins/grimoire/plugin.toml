@@ -1,0 +1,18 @@
+id = "tanren/grimoire"
+name = "Grimoire"
+version = "0.1.0"
+plugin_api = 22
+author = "tanren"
+license = "MIT"
+dependencies = []
+tags = ["theme"]
+icon = "book"
+description = "Widgets, icons and theme pieces for the desktop."
+
+[[service]]
+id = "theme"
+entry = "theme.luau"
+
+[[widget]]
+id = "owl"
+entry = "owl.luau"

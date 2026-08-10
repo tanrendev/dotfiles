@@ -2,6 +2,11 @@
 {
   imports = [ inputs.nix-index-database.homeModules.default ];
 
+  xdg.configFile = {
+    "fastfetch/owl-dark.png".source = ./fastfetch/owl-dark.png;
+    "fastfetch/owl-light.png".source = ./fastfetch/owl-light.png;
+  };
+
   programs = {
     nix-index-database.comma.enable = true;
 
@@ -10,7 +15,7 @@
       interactiveShellInit = ''
         set -g fish_greeting
         if set -q KITTY_WINDOW_ID
-          fastfetch
+          fastfetch --logo ~/.config/fastfetch/owl-(noctalia msg theme-mode-get 2>/dev/null; or echo dark).png --logo-type kitty-direct --logo-width 36
         end
       '';
     };

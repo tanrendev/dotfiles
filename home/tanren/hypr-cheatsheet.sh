@@ -1,4 +1,4 @@
-hyprctl -j binds | jq -r '
+list=$(hyprctl -j binds | jq -r '
   def bit($n): ((.modmask / $n) | floor) % 2 == 1;
   def pretty:
     {
@@ -12,7 +12,19 @@ hyprctl -j binds | jq -r '
       "comma": ",",
       "period": ".",
       "grave": "`",
-      "slash": "/"
+      "slash": "/",
+      "Return": "ENTER",
+      "Escape": "ESC",
+      "Print": "PRTSC",
+      "XF86AudioRaiseVolume": "VOLUME UP",
+      "XF86AudioLowerVolume": "VOLUME DOWN",
+      "XF86AudioMute": "MUTE",
+      "XF86AudioMicMute": "MIC MUTE",
+      "XF86MonBrightnessUp": "BRIGHTNESS UP",
+      "XF86MonBrightnessDown": "BRIGHTNESS DOWN",
+      "XF86AudioPlay": "PLAY",
+      "XF86AudioNext": "NEXT TRACK",
+      "XF86AudioPrev": "PREV TRACK"
     }[.] // .;
   .[]
   | select(.description != "")
@@ -27,4 +39,5 @@ hyprctl -j binds | jq -r '
       .description
     ]
   | @tsv
-' | column -t -s "$(printf '\t')" | fuzzel --dmenu --prompt "keys  " >/dev/null || true
+' | column -t -s "$(printf '\t')")
+fuzzel --dmenu --prompt "keys  " <<<"$list" >/dev/null || true

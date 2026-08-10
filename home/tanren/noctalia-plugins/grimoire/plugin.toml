@@ -9,10 +9,6 @@ tags = ["theme"]
 icon = "book"
 description = "Widgets, icons and theme pieces for the desktop."
 
-[[service]]
-id = "theme"
-entry = "theme.luau"
-
 [[widget]]
 id = "owl"
 entry = "owl.luau"

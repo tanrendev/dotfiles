@@ -2,7 +2,7 @@ NixOS flake. Hyprland with [Noctalia](https://docs.noctalia.dev/v5/).
 
 ```
 nixos-rebuild switch --flake .#lyngen
-nix flake check --all-systems
+nix flake check
 nix develop
 ```
 

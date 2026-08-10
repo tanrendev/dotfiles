@@ -40,19 +40,13 @@
       formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);
 
       checks = forAllSystems (pkgs: {
-        nixfmt =
-          pkgs.runCommand "nixfmt"
-            {
-              nativeBuildInputs = [
-                pkgs.nixfmt
-                pkgs.findutils
-              ];
-            }
-            ''
-              cd ${self}
-              find . -name '*.nix' -exec nixfmt --check {} +
-              touch $out
-            '';
+        nixfmt = pkgs.runCommand "nixfmt" { nativeBuildInputs = [ pkgs.nixfmt-tree ]; } ''
+          cp -r ${self} work
+          chmod -R +w work
+          cd work
+          treefmt --ci
+          touch $out
+        '';
 
         statix = pkgs.runCommand "statix" { nativeBuildInputs = [ pkgs.statix ]; } ''
           cd ${self}

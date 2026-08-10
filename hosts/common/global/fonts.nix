@@ -1,4 +1,14 @@
-{ lib, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  pixelarticons = pkgs.runCommand "pixelarticons-fonts" { } ''
+    install -Dm444 -t $out/share/fonts/truetype ${inputs.noctalia-pixel-art}/fonts/Pixelarticons*.ttf
+  '';
+in
 {
   fonts = {
     packages =
@@ -8,6 +18,7 @@
         noto-fonts
         noto-fonts-cjk-sans
         noto-fonts-color-emoji
+        pixelarticons
       ]
       ++ builtins.filter lib.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 

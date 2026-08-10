@@ -96,6 +96,22 @@
         "type": "github"
       }
     },
+    "noctalia-pixel-art": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786392645,
+        "narHash": "sha256-qiBooenSOdxgWXt794pW+d1Rv2kOMiqKIZmry8wxWxQ=",
+        "ref": "refs/heads/master",
+        "rev": "ab520ee501e178e1858a5aacae034bc69b4111fc",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/tanrendev/noctalia-pixel-art"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/tanrendev/noctalia-pixel-art"
+      }
+    },
     "noctalia-plugins": {
       "flake": false,
       "locked": {
@@ -119,6 +135,7 @@
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter",
+        "noctalia-pixel-art": "noctalia-pixel-art",
         "noctalia-plugins": "noctalia-plugins"
       }
     }

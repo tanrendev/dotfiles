@@ -28,3 +28,4 @@ jobs:
           token: ${{ secrets.FLAKE_UPDATE_TOKEN || github.token }}
           pr-title: "chore: update flake.lock"
           pr-labels: dependencies
+          inputs: nixpkgs home-manager nix-index-database noctalia noctalia-greeter noctalia-plugins

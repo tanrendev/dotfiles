@@ -28,6 +28,11 @@
       url = "github:noctalia-dev/official-plugins";
       flake = false;
     };
+
+    noctalia-pixel-art = {
+      url = "git+ssh://git@github.com/tanrendev/noctalia-pixel-art";
+      flake = false;
+    };
   };
 
   outputs =

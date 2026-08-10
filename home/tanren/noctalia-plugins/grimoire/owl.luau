@@ -34,7 +34,9 @@ function update()
   step = (step + 1) % 64
   local ev = events[step]
   if ev then
-    queue = ev
+    queue = { table.unpack(ev) }
+    show(table.remove(queue, 1), 100)
+    return
   end
   show("open", 250)
 end

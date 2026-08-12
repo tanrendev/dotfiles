@@ -7,7 +7,7 @@
 
     nh = {
       enable = true;
-      flake = "${config.home.homeDirectory}/Workshop/ostal";
+      flake = "${config.home.homeDirectory}/Workshop/ostal/dotfiles";
     };
   };
 

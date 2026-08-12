@@ -1,9 +1,4 @@
-{
-  inputs,
-  lib,
-  pkgs,
-  ...
-}:
+{ inputs, pkgs, ... }:
 let
   pixelarticons = pkgs.runCommand "pixelarticons-fonts" { } ''
     install -Dm444 -t $out/share/fonts/truetype ${inputs.noctalia-pixel-art}/fonts/Pixelarticons*.ttf
@@ -11,16 +6,14 @@ let
 in
 {
   fonts = {
-    packages =
-      with pkgs;
-      [
-        departure-mono
-        noto-fonts
-        noto-fonts-cjk-sans
-        noto-fonts-color-emoji
-        pixelarticons
-      ]
-      ++ builtins.filter lib.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+    packages = with pkgs; [
+      departure-mono
+      nerd-fonts.jetbrains-mono
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+      pixelarticons
+    ];
 
     fontconfig.defaultFonts = {
       monospace = [ "JetBrainsMono Nerd Font" ];

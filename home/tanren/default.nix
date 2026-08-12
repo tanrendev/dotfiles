@@ -12,6 +12,7 @@
     ./kitty.nix
     ./media.nix
     ./noctalia.nix
+    ./office.nix
     ./pdf.nix
     ./removable-media.nix
     ./shell.nix

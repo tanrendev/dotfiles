@@ -3,7 +3,7 @@
   home.packages = [ pkgs.nano ];
 
   xdg.configFile."Code/User/settings.json".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/tanren/vscode-settings.json";
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Workshop/ostal/home/tanren/vscode-settings.json";
 
   programs = {
     helix = {

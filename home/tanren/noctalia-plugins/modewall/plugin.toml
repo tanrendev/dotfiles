@@ -1,0 +1,36 @@
+id = "tanren/modewall"
+name = "Mode Wallpaper"
+version = "1.0.0"
+plugin_api = 9
+author = "tanren"
+license = "MIT"
+dependencies = []
+tags = ["wallpaper", "theme"]
+icon = "sun-moon"
+description = "One wallpaper per theme mode, applied on mode change."
+
+[[setting]]
+key = "apply_on_startup"
+type = "bool"
+label_key = "settings.apply_on_startup.label"
+description_key = "settings.apply_on_startup.description"
+default = true
+
+[[setting]]
+key = "greeter_sync"
+type = "bool"
+label_key = "settings.greeter_sync.label"
+description_key = "settings.greeter_sync.description"
+default = false
+
+[[service]]
+id = "service"
+entry = "service.luau"
+
+[[panel]]
+id = "picker"
+entry = "panel.luau"
+width = 920
+height = 780
+placement = "attached"
+position = "auto"

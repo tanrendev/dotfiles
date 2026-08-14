@@ -22,5 +22,6 @@
     "https://developer.microsoft.com/json-schemas/": true,
     "https://biomejs.dev": true
   },
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "git.autofetch": true
 }

@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 let
   pixelarticons = pkgs.runCommand "pixelarticons-fonts" { } ''
-    install -Dm444 -t $out/share/fonts/truetype ${inputs.noctalia-pixel-art}/fonts/Pixelarticons*.ttf
+    install -Dm444 -t $out/share/fonts/truetype ${inputs.nix-ostal-assets}/fonts/Pixelarticons*.ttf
   '';
 in
 {

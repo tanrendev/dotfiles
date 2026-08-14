@@ -29,8 +29,8 @@
       flake = false;
     };
 
-    noctalia-pixel-art = {
-      url = "git+ssh://git@github.com/tanrendev/noctalia-pixel-art";
+    nix-ostal-assets = {
+      url = "git+ssh://git@github.com/tanrendev/nix-ostal-assets";
       flake = false;
     };
   };

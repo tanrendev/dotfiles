@@ -9,7 +9,7 @@ let
   assets = pkgs.runCommand "noctalia-pixel-assets" { } ''
     cp -rs ${config.programs.noctalia.package}/share/noctalia/assets $out
     chmod -R u+w $out
-    ln -sf ${inputs.noctalia-pixel-art}/fonts/tabler.ttf $out/fonts/tabler.ttf
+    ln -sf ${inputs.nix-ostal-assets}/fonts/tabler.ttf $out/fonts/tabler.ttf
   '';
 in
 {

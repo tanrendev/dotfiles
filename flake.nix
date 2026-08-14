@@ -28,11 +28,6 @@
       url = "github:noctalia-dev/official-plugins";
       flake = false;
     };
-
-    nix-ostal-assets = {
-      url = "git+ssh://git@github.com/tanrendev/nix-ostal-assets";
-      flake = false;
-    };
   };
 
   outputs =

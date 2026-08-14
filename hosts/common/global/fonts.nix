@@ -1,9 +1,4 @@
-{ inputs, pkgs, ... }:
-let
-  pixelarticons = pkgs.runCommand "pixelarticons-fonts" { } ''
-    install -Dm444 -t $out/share/fonts/truetype ${inputs.nix-ostal-assets}/fonts/Pixelarticons*.ttf
-  '';
-in
+{ pkgs, ... }:
 {
   fonts = {
     packages = with pkgs; [
@@ -12,7 +7,6 @@ in
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
-      pixelarticons
     ];
 
     fontconfig.defaultFonts = {

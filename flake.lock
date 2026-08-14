@@ -40,22 +40,6 @@
         "type": "github"
       }
     },
-    "nix-ostal-assets": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1786392645,
-        "narHash": "sha256-qiBooenSOdxgWXt794pW+d1Rv2kOMiqKIZmry8wxWxQ=",
-        "ref": "refs/heads/master",
-        "rev": "ab520ee501e178e1858a5aacae034bc69b4111fc",
-        "revCount": 1,
-        "type": "git",
-        "url": "ssh://git@github.com/tanrendev/nix-ostal-assets"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/tanrendev/nix-ostal-assets"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1786106723,
@@ -132,7 +116,6 @@
       "inputs": {
         "home-manager": "home-manager",
         "nix-index-database": "nix-index-database",
-        "nix-ostal-assets": "nix-ostal-assets",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter",

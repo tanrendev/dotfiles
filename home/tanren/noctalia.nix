@@ -1,23 +1,13 @@
 {
-  config,
   inputs,
   lib,
   pkgs,
   ...
 }:
-let
-  assets = pkgs.runCommand "noctalia-pixel-assets" { } ''
-    cp -rs ${config.programs.noctalia.package}/share/noctalia/assets $out
-    chmod -R u+w $out
-    ln -sf ${inputs.nix-ostal-assets}/fonts/tabler.ttf $out/fonts/tabler.ttf
-  '';
-in
 {
   imports = [ inputs.noctalia.homeModules.default ];
 
   home.packages = [ pkgs.mpvpaper ];
-
-  systemd.user.services.noctalia.Service.Environment = [ "NOCTALIA_ASSETS_DIR=${assets}" ];
 
   xdg.configFile."noctalia/templates/fuzzel.ini".source = ./noctalia-templates/fuzzel.ini;
 

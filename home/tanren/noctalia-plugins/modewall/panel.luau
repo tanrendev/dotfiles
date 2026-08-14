@@ -4,17 +4,31 @@ local COLUMNS = 4
 local COLUMN_GAP = 12
 local PAGE_SIZE = 12
 local TILE_RADIUS = 12
+local THUMB_MAX_CONCURRENT = 4
+local THUMB_WIDTH = 640
 local IMAGE_EXTENSIONS = { png = true, jpg = true, jpeg = true, webp = true }
+local CACHE_DIR = (noctalia.getenv("XDG_CACHE_HOME") or ((noctalia.getenv("HOME") or "") .. "/.cache"))
+  .. "/noctalia/modewall"
 
 local wallpapers = {}
 local page = 1
 local errorMessage = ""
 local cmdNonce = 0
+local ffmpegAvailable = noctalia.commandExists("ffmpeg")
+
+local thumbPaths = {}
+local thumbPending = {}
+local thumbQueue = {}
+local thumbActive = 0
 
 local render
 
 local function tr(key)
   return noctalia.tr(key)
+end
+
+local function shellQuote(s)
+  return "'" .. tostring(s):gsub("'", "'\\''") .. "'"
 end
 
 local function assignments()
@@ -28,6 +42,48 @@ end
 local function extensionOf(name)
   local ext = name:match("%.([%a%d]+)$")
   return ext and ext:lower() or ""
+end
+
+local function cachePath(path)
+  return CACHE_DIR .. "/" .. path:gsub("[^%w]", "_") .. ".jpg"
+end
+
+local function pumpThumbQueue()
+  while thumbActive < THUMB_MAX_CONCURRENT and #thumbQueue > 0 do
+    local path = table.remove(thumbQueue, 1)
+    if thumbPaths[path] == nil and not thumbPending[path] then
+      thumbPending[path] = true
+      thumbActive += 1
+      local dest = cachePath(path)
+      local cmd = "ffmpeg -y -loglevel error -i " .. shellQuote(path)
+        .. " -vf scale=" .. THUMB_WIDTH .. ":-2 -frames:v 1 " .. shellQuote(dest)
+      noctalia.runAsync(cmd, function(result)
+        thumbActive -= 1
+        thumbPending[path] = nil
+        if result.exitCode == 0 and noctalia.fileExists(dest) then
+          thumbPaths[path] = dest
+          render()
+        end
+        pumpThumbQueue()
+      end, 20000)
+    end
+  end
+end
+
+local function queueThumb(path)
+  if not ffmpegAvailable then
+    thumbPaths[path] = path
+    return
+  end
+  if noctalia.fileExists(cachePath(path)) then
+    thumbPaths[path] = cachePath(path)
+    return
+  end
+  if thumbPending[path] then
+    return
+  end
+  table.insert(thumbQueue, path)
+  pumpThumbQueue()
 end
 
 local function loadWallpapers()
@@ -57,6 +113,11 @@ local function loadWallpapers()
     return a.name < b.name
   end)
   page = 1
+  noctalia.runAsync("mkdir -p " .. shellQuote(CACHE_DIR), function(_)
+    for _, wallpaper in ipairs(wallpapers) do
+      queueThumb(wallpaper.path)
+    end
+  end)
 end
 
 local function sendCommand(action, mode, path)
@@ -95,16 +156,30 @@ local function wallpaperTile(wallpaper)
   local frameWidth, frameHeight = tileSize()
   local assigned = assignments()
   local marked = assigned.light == wallpaper.path or assigned.dark == wallpaper.path
-  return ui.column({ gap = 4, key = wallpaper.path, flexGrow = 1, align = "stretch" }, {
-    ui.image({
+  local thumb = thumbPaths[wallpaper.path]
+  local preview
+  if thumb ~= nil then
+    preview = ui.image({
       width = frameWidth,
       height = frameHeight,
-      path = wallpaper.path,
+      path = thumb,
       fit = "cover",
       radius = TILE_RADIUS,
       border = marked and "primary" or "outline",
       borderWidth = marked and 3 or 1,
-    }),
+    })
+  else
+    preview = ui.box({
+      width = frameWidth,
+      height = frameHeight,
+      fill = "surface_variant",
+      radius = TILE_RADIUS,
+      border = marked and "primary" or "outline",
+      borderWidth = marked and 3 or 1,
+    })
+  end
+  return ui.column({ gap = 4, key = wallpaper.path, flexGrow = 1, align = "stretch" }, {
+    preview,
     ui.label({
       text = wallpaper.name,
       fontSize = 11,
@@ -131,6 +206,9 @@ local function wallpaperGrid()
   for i = first, last do
     table.insert(row, wallpaperTile(wallpapers[i]))
     if #row == COLUMNS or i == last then
+      while #row < COLUMNS do
+        table.insert(row, ui.column({ flexGrow = 1 }))
+      end
       table.insert(rows, ui.row({ gap = COLUMN_GAP, align = "stretch" }, row))
       row = {}
     end

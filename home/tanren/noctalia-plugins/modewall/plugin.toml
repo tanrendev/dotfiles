@@ -27,6 +27,10 @@ default = false
 id = "service"
 entry = "service.luau"
 
+[[widget]]
+id = "indicator"
+entry = "widget.luau"
+
 [[panel]]
 id = "picker"
 entry = "panel.luau"

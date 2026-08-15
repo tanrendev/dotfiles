@@ -23,5 +23,6 @@
     "https://biomejs.dev": true
   },
   "explorer.confirmDelete": false,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "explorer.confirmDragAndDrop": false
 }

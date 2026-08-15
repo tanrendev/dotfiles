@@ -38,7 +38,6 @@
           "clock"
         ];
         end = [
-          "tanren/modewall:indicator"
           "tray"
           "notifications"
           "network"

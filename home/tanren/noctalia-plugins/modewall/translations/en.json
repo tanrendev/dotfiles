@@ -1,21 +1,12 @@
 {
   "settings": {
-    "apply_on_startup": {
-      "label": "Apply on startup",
-      "description": "Apply the current mode's wallpaper when the service starts."
+    "light": {
+      "label": "Light mode wallpaper",
+      "description": "Applied when the theme switches to light mode."
     },
-    "greeter_sync": {
-      "label": "Greeter sync",
-      "description": "Run greeter-sync after each wallpaper change."
+    "dark": {
+      "label": "Dark mode wallpaper",
+      "description": "Applied when the theme switches to dark mode."
     }
-  },
-  "title": "Mode Wallpaper",
-  "light": "Light",
-  "dark": "Dark",
-  "empty": "No wallpapers found",
-  "no_directory": "No wallpaper directory configured",
-  "notify": {
-    "title": "Mode Wallpaper",
-    "missing": "Assigned wallpaper is missing: {path}"
   }
 }

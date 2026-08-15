@@ -28,7 +28,7 @@
       };
 
       bar.default.start = [
-        "tanren/grimoire:owl"
+        "tanren/familiar:owl"
         "launcher"
         "wallpaper"
         "workspaces"
@@ -90,7 +90,7 @@
         enabled = [
           "noctalia/mpvpaper"
           "noctalia/screen_recorder"
-          "tanren/grimoire"
+          "tanren/familiar"
           "tanren/patina"
         ];
         auto_update = false;
@@ -102,9 +102,9 @@
             enabled = true;
           }
           {
-            name = "dotfiles";
+            name = "familiar";
             kind = "path";
-            location = "${./noctalia-plugins}";
+            location = "${inputs.familiar}";
             enabled = true;
           }
           {

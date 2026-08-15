@@ -27,36 +27,12 @@
         font_family = "Departure Mono";
       };
 
-      bar.default = {
-        start = [
-          "workspaces"
-          "gap"
-          "media"
-        ];
-        center = [
-          "date"
-          "tanren/grimoire:owl"
-          "clock"
-        ];
-        end = [
-          "tray"
-          "notifications"
-          "network"
-          "bluetooth"
-          "volume"
-          "brightness"
-          "battery"
-          "session"
-        ];
-        radius = 0;
-        thickness = 48;
-      };
-
-      widget.workspaces.style = "minimal";
-      widget.gap = {
-        type = "spacer";
-        length = 170;
-      };
+      bar.default.start = [
+        "tanren/grimoire:owl"
+        "launcher"
+        "wallpaper"
+        "workspaces"
+      ];
 
       theme = {
         mode = "dark";

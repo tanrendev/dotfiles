@@ -107,7 +107,7 @@
           "noctalia/mpvpaper"
           "noctalia/screen_recorder"
           "tanren/grimoire"
-          "tanren/modewall"
+          "tanren/patina"
         ];
         auto_update = false;
         source = [

@@ -12,6 +12,8 @@ list=$(hyprctl -j binds | jq -r '
       "comma": ",",
       "period": ".",
       "grave": "`",
+      "equal": "=",
+      "minus": "-",
       "slash": "/",
       "Return": "ENTER",
       "Escape": "ESC",

@@ -186,6 +186,14 @@ in
         (bind "Last workspace" "CTRL + Tab" ''hl.dsp.focus({ workspace = "previous" })'')
         (bind "Previous workspace" "mouse_up" ''hl.dsp.focus({ workspace = "e-1" })'')
         (bind "Next workspace" "mouse_down" ''hl.dsp.focus({ workspace = "e+1" })'')
+        (bind "Grow window width" "equal" "hl.dsp.window.resize({ x = 50, y = 0, relative = true })")
+        (bind "Shrink window width" "minus" "hl.dsp.window.resize({ x = -50, y = 0, relative = true })")
+        (bind "Grow window height" "SHIFT + equal"
+          "hl.dsp.window.resize({ x = 0, y = 50, relative = true })"
+        )
+        (bind "Shrink window height" "SHIFT + minus"
+          "hl.dsp.window.resize({ x = 0, y = -50, relative = true })"
+        )
         (mouseBind "Drag window" "mouse:272" "hl.dsp.window.drag()")
         (mouseBind "Resize window" "mouse:273" "hl.dsp.window.resize()")
         (plainBind "Cycle windows" "ALT + Tab" "hl.dsp.window.cycle_next()")
@@ -193,6 +201,9 @@ in
           "hl.dsp.window.cycle_next({ next = false })"
         )
         (plainBind "Screenshot screen" "Print" (msg "screenshot-fullscreen"))
+        (plainBind "Screen record" "ALT + Print" (
+          exec "sh -c 'pkill -INT gpu-screen || { mkdir -p ~/Videos; gpu-screen-recorder -w screen -a default_output -o ~/Videos/$(date +%Y%m%d-%H%M%S).mp4; }'"
+        ))
       ]
       ++ map (d: bind "Focus ${d}" d ''hl.dsp.focus({ direction = "${d}" })'') directions
       ++ map (

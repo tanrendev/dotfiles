@@ -10,6 +10,7 @@
   home.packages = [ pkgs.mpvpaper ];
 
   xdg.configFile."noctalia/templates/fuzzel.ini".source = ./noctalia-templates/fuzzel.ini;
+  xdg.configFile."noctalia/templates/fastfetch.jsonc".source = ./noctalia-templates/fastfetch.jsonc;
 
   programs.noctalia = {
     enable = true;
@@ -62,21 +63,28 @@
         source = "custom";
         custom_palette = "grimoire";
 
-        templates.builtin_ids = [
-          "btop"
-          "cava"
-          "gtk3"
-          "gtk4"
-          "helix"
-          "hyprland"
-          "kitty"
-          "qt"
-          "starship"
-        ];
+        templates = {
+          builtin_ids = [
+            "btop"
+            "cava"
+            "gtk3"
+            "gtk4"
+            "helix"
+            "hyprland"
+            "kitty"
+            "qt"
+            "starship"
+          ];
 
-        templates.user.fuzzel = {
-          input_path = "templates/fuzzel.ini";
-          output_path = "~/.config/fuzzel/noctalia.ini";
+          user.fuzzel = {
+            input_path = "templates/fuzzel.ini";
+            output_path = "~/.config/fuzzel/noctalia.ini";
+          };
+
+          user.fastfetch = {
+            input_path = "templates/fastfetch.jsonc";
+            output_path = "~/.config/fastfetch/config.jsonc";
+          };
         };
       };
 

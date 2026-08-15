@@ -15,7 +15,7 @@
       interactiveShellInit = ''
         set -g fish_greeting
         if set -q KITTY_WINDOW_ID
-          fastfetch --logo ~/.config/fastfetch/owl-(noctalia msg theme-mode-get 2>/dev/null; or echo dark).png --logo-type kitty-direct --logo-width 36
+          fastfetch
         end
       '';
     };

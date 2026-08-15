@@ -123,6 +123,12 @@
             location = "${./noctalia-plugins}";
             enabled = true;
           }
+          {
+            name = "patina";
+            kind = "path";
+            location = "${inputs.patina}";
+            enabled = true;
+          }
         ];
       };
     };

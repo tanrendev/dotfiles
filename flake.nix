@@ -28,6 +28,11 @@
       url = "github:noctalia-dev/official-plugins";
       flake = false;
     };
+
+    patina = {
+      url = "github:tanrendev/patina";
+      flake = false;
+    };
   };
 
   outputs =

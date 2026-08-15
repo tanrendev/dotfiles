@@ -112,6 +112,22 @@
         "type": "github"
       }
     },
+    "patina": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786795371,
+        "narHash": "sha256-6jY+teFpyZCFVmy2IB0/OHfcB09ntkM3ybd+XL9hJ6g=",
+        "owner": "tanrendev",
+        "repo": "patina",
+        "rev": "5ebc86a6e11308da8225b1085fb7669f21612231",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tanrendev",
+        "repo": "patina",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
@@ -119,7 +135,8 @@
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter",
-        "noctalia-plugins": "noctalia-plugins"
+        "noctalia-plugins": "noctalia-plugins",
+        "patina": "patina"
       }
     }
   },

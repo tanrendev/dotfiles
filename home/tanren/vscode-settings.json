@@ -24,5 +24,9 @@
   },
   "explorer.confirmDelete": false,
   "git.autofetch": true,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "luau-lsp.platform.type": "standard",
+  "luau-lsp.types.definitionFiles": {
+    "noctalia": "/home/tanren/Workshop/ostal/familiar/noctalia.d.luau"
+  }
 }

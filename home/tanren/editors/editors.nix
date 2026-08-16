@@ -30,7 +30,7 @@
       viAlias = true;
       vimAlias = true;
       plugins = [ pkgs.vimPlugins.base16-nvim ];
-      extraLuaConfig = builtins.readFile ./nvim.lua;
+      initLua = builtins.readFile ./nvim.lua;
     };
 
     vscode = {

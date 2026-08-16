@@ -126,13 +126,13 @@ in
             enabled = true;
           }
           {
-            name = "familiar";
+            name = "tanren";
             kind = "path";
             location = "${inputs.familiar}";
             enabled = true;
           }
           {
-            name = "patina";
+            name = "tanren";
             kind = "path";
             location = "${inputs.patina}";
             enabled = true;

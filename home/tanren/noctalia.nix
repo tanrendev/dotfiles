@@ -79,6 +79,12 @@
         };
       };
 
+      hooks.theme_mode_changed =
+        let
+          dconf = lib.getExe pkgs.dconf;
+        in
+        "if [ \"$NOCTALIA_THEME_MODE\" = light ]; then ${dconf} write /org/gnome/desktop/interface/icon-theme \"'Papirus-Light'\"; else ${dconf} write /org/gnome/desktop/interface/icon-theme \"'Papirus-Dark'\"; fi";
+
       location.auto_locate = true;
 
       weather = {

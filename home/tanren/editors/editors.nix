@@ -6,7 +6,7 @@
   ];
 
   xdg.configFile."Code/User/settings.json".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Workshop/ostal/dotfiles/home/tanren/vscode-settings.json";
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Workshop/ostal/dotfiles/home/tanren/editors/vscode-settings.json";
 
   programs = {
     helix = {
@@ -30,12 +30,7 @@
       viAlias = true;
       vimAlias = true;
       plugins = [ pkgs.vimPlugins.base16-nvim ];
-      extraLuaConfig = ''
-        local ok, matugen = pcall(require, "matugen")
-        if ok then
-          matugen.setup()
-        end
-      '';
+      extraLuaConfig = builtins.readFile ./nvim.lua;
     };
 
     vscode = {

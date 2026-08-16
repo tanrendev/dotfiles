@@ -4,19 +4,26 @@
   pkgs,
   ...
 }:
+let
+  themeModeHook = pkgs.writeShellApplication {
+    name = "theme-mode-hook";
+    runtimeInputs = [ pkgs.dconf ];
+    text = builtins.readFile ./theme-mode-hook.sh;
+  };
+in
 {
   imports = [ inputs.noctalia.homeModules.default ];
 
   home.packages = [ pkgs.mpvpaper ];
 
-  xdg.configFile."noctalia/templates/fuzzel.ini".source = ./noctalia-templates/fuzzel.ini;
-  xdg.configFile."noctalia/templates/fastfetch.jsonc".source = ./noctalia-templates/fastfetch.jsonc;
+  xdg.configFile."noctalia/templates/fuzzel.ini".source = ./templates/fuzzel.ini;
+  xdg.configFile."noctalia/templates/fastfetch.jsonc".source = ./templates/fastfetch.jsonc;
 
   programs.noctalia = {
     enable = true;
     systemd.enable = true;
 
-    customPalettes.tincture = lib.importJSON ./noctalia-palettes/tincture.json;
+    customPalettes.tincture = lib.importJSON ./palettes/tincture.json;
 
     settings = {
       shell = {
@@ -79,11 +86,7 @@
         };
       };
 
-      hooks.theme_mode_changed =
-        let
-          dconf = lib.getExe pkgs.dconf;
-        in
-        "if [ \"$NOCTALIA_THEME_MODE\" = light ]; then ${dconf} write /org/gnome/desktop/interface/icon-theme \"'Papirus-Light'\"; else ${dconf} write /org/gnome/desktop/interface/icon-theme \"'Papirus-Dark'\"; fi";
+      hooks.theme_mode_changed = lib.getExe themeModeHook;
 
       location.auto_locate = true;
 

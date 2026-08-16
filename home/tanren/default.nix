@@ -4,18 +4,18 @@
     ./chat.nix
     ./cursor.nix
     ./dev.nix
-    ./editors.nix
+    ./editors/editors.nix
     ./fuzzel.nix
     ./graphics.nix
-    ./gtk.nix
-    ./hyprland.nix
+    ./gtk/gtk.nix
+    ./hyprland/hyprland.nix
     ./kitty.nix
     ./media.nix
-    ./noctalia.nix
+    ./noctalia/noctalia.nix
     ./office.nix
     ./pdf.nix
     ./removable-media.nix
-    ./shell.nix
+    ./shell/shell.nix
     ./xdg.nix
   ];
 

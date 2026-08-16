@@ -12,12 +12,7 @@
 
     fish = {
       enable = true;
-      interactiveShellInit = ''
-        set -g fish_greeting
-        if set -q KITTY_WINDOW_ID
-          fastfetch
-        end
-      '';
+      interactiveShellInit = builtins.readFile ./init.fish;
     };
 
     starship.enable = true;

@@ -73,6 +73,15 @@ let
     ];
     text = builtins.readFile ./hypr-cheatsheet.sh;
   };
+
+  screenRecord = pkgs.writeShellApplication {
+    name = "screen-record";
+    runtimeInputs = with pkgs; [
+      coreutils
+      procps
+    ];
+    text = builtins.readFile ./screen-record.sh;
+  };
 in
 {
   home.packages = with pkgs; [
@@ -206,9 +215,7 @@ in
           "hl.dsp.window.cycle_next({ next = false })"
         )
         (plainBind "Screenshot screen" "Print" (msg "screenshot-fullscreen"))
-        (plainBind "Screen record" "ALT + Print" (
-          exec "sh -c 'pkill -INT gpu-screen || { mkdir -p ~/Videos; gpu-screen-recorder -w screen -a default_output -o ~/Videos/$(date +%Y%m%d-%H%M%S).mp4; }'"
-        ))
+        (plainBind "Screen record" "ALT + Print" (exec (lib.getExe screenRecord)))
       ]
       ++ map (d: bind "Focus ${d}" d ''hl.dsp.focus({ direction = "${d}" })'') directions
       ++ map (

@@ -66,6 +66,12 @@
             sha256 = "0fl6c1p86sm39j7rbzwp0i0s6s6ny9ibsp98c8hc5vr65jllyqmr";
           })
           (pkgs.vscode-utils.extensionFromVscodeMarketplace {
+            publisher = "JohnnyMorganz";
+            name = "luau-lsp";
+            version = "1.69.0";
+            sha256 = "1fbpaiy46wdc6qfb14z9dbavcy7djnk30mc4638r3nmycc1kir8q";
+          })
+          (pkgs.vscode-utils.extensionFromVscodeMarketplace {
             publisher = "oven";
             name = "bun-vscode";
             version = "0.0.32";

@@ -131,11 +131,11 @@
     "patina": {
       "flake": false,
       "locked": {
-        "lastModified": 1786820965,
-        "narHash": "sha256-/UiQO3/uOC1eysAdjcL5CWjtTy4a0/cvbQA8rAxgN2Y=",
+        "lastModified": 1786879549,
+        "narHash": "sha256-O/6cT8Z4iiOGA9/LHV+hEBmlPpozHazbLZp9QS/TXYw=",
         "owner": "tanrendev",
         "repo": "patina",
-        "rev": "c636070eb8eb81385fe4d7defdb5ce95efe6032d",
+        "rev": "ff54cae079ef3cf740f90d53a04fd8d0780073c6",
         "type": "github"
       },
       "original": {

@@ -23,7 +23,6 @@
         polkit_agent = true;
         clipboard_enabled = true;
         launch_apps_as_systemd_services = true;
-        corner_radius_scale = 0.0;
         font_family = "Departure Mono";
       };
 

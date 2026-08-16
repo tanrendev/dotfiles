@@ -16,7 +16,6 @@
 
       border = {
         width = 1;
-        radius = 12;
       };
     };
   };

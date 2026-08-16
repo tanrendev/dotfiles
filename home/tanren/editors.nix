@@ -29,6 +29,13 @@
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
+      plugins = [ pkgs.vimPlugins.base16-nvim ];
+      extraLuaConfig = ''
+        local ok, matugen = pcall(require, "matugen")
+        if ok then
+          matugen.setup()
+        end
+      '';
     };
 
     vscode = {
@@ -40,8 +47,6 @@
           anthropic.claude-code
           batisteo.vscode-django
           biomejs.biome
-          catppuccin.catppuccin-vsc
-          catppuccin.catppuccin-vsc-icons
           charliermarsh.ruff
           davidanson.vscode-markdownlint
           eamodio.gitlens

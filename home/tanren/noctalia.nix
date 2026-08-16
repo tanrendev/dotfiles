@@ -51,6 +51,22 @@
             "starship"
           ];
 
+          enable_community_templates = true;
+          community_ids = [
+            "bat"
+            "discord"
+            "gimp"
+            "inkscape"
+            "lazygit"
+            "libreoffice"
+            "neovim"
+            "pywalfox"
+            "telegram"
+            "vscode"
+            "yazi"
+            "zathura"
+          ];
+
           user.fuzzel = {
             input_path = "templates/fuzzel.ini";
             output_path = "~/.config/fuzzel/noctalia.ini";

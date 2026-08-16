@@ -1,4 +1,5 @@
 {
+  "workbench.colorTheme": "NoctaliaTheme",
   "extensions.autoUpdate": "off",
   "extensions.autoCheckUpdates": false,
   "extensions.ignoreRecommendations": true,
@@ -29,5 +30,8 @@
   "luau-lsp.platform.type": "standard",
   "luau-lsp.types.definitionFiles": {
     "noctalia": "/home/tanren/Workshop/ostal/familiar/noctalia.d.luau"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

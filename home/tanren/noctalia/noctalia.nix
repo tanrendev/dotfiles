@@ -21,6 +21,7 @@ in
     "noctalia/templates/fastfetch.jsonc".source = ./templates/fastfetch.jsonc;
     "noctalia/templates/vscode-dark.json".source = ./templates/vscode-dark.json;
     "noctalia/templates/vscode-light.json".source = ./templates/vscode-light.json;
+    "noctalia/templates/vesktop.css".source = ./templates/vesktop.css;
   };
 
   programs.noctalia = {
@@ -64,7 +65,6 @@ in
 
           enable_community_templates = true;
           community_ids = [
-            "discord"
             "gimp"
             "inkscape"
             "lazygit"
@@ -98,6 +98,10 @@ in
               output_path = "~/.vscode/extensions/tincture-theme/themes/tincture-light-color-theme.json";
             };
 
+            vesktop = {
+              input_path = "templates/vesktop.css";
+              output_path = "~/.config/vesktop/themes/tincture.theme.css";
+            };
           };
         };
       };

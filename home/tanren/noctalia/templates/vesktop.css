@@ -1,0 +1,271 @@
+.theme-dark:not(.custom-user-profile-theme) {
+  --tin-primary: {{colors.primary.dark.hex}};
+  --tin-on-primary: {{colors.on_primary.dark.hex}};
+  --tin-tertiary: {{colors.tertiary.dark.hex}};
+  --tin-on-tertiary: {{colors.on_tertiary.dark.hex}};
+  --tin-error: {{colors.error.dark.hex}};
+  --tin-on-error: {{colors.on_error.dark.hex}};
+  --tin-base: {{colors.surface.dark.hex}};
+  --tin-low: {{colors.surface_container_lowest.dark.hex}};
+  --tin-mid: {{colors.surface_container_low.dark.hex}};
+  --tin-chat: {{colors.surface_container.dark.hex}};
+  --tin-raised: {{colors.hover.dark.hex}};
+  --tin-text: {{colors.on_surface.dark.hex}};
+  --tin-text-muted: {{colors.on_surface_variant.dark.hex}};
+  --tin-faint: {{colors.outline.dark.hex}};
+  --tin-red: {{colors.terminal_bright_red.dark.hex}};
+  --tin-green: {{colors.terminal_normal_green.dark.hex}};
+  --tin-yellow: {{colors.terminal_normal_yellow.dark.hex}};
+  --tin-blue: {{colors.terminal_normal_blue.dark.hex}};
+  --tin-magenta: {{colors.terminal_normal_magenta.dark.hex}};
+  --tin-cyan: {{colors.terminal_normal_cyan.dark.hex}};
+}
+
+.theme-light:not(.custom-user-profile-theme) {
+  --tin-primary: {{colors.primary.light.hex}};
+  --tin-on-primary: {{colors.on_primary.light.hex}};
+  --tin-tertiary: {{colors.tertiary.light.hex}};
+  --tin-on-tertiary: {{colors.on_tertiary.light.hex}};
+  --tin-error: {{colors.error.light.hex}};
+  --tin-on-error: {{colors.on_error.light.hex}};
+  --tin-base: {{colors.surface.light.hex}};
+  --tin-low: {{colors.surface_container_lowest.light.hex}};
+  --tin-mid: {{colors.surface_container_low.light.hex}};
+  --tin-chat: {{colors.surface_container.light.hex}};
+  --tin-raised: {{colors.hover.light.hex}};
+  --tin-text: {{colors.on_surface.light.hex}};
+  --tin-text-muted: {{colors.on_surface_variant.light.hex}};
+  --tin-faint: {{colors.outline.light.hex}};
+  --tin-red: {{colors.terminal_bright_red.light.hex}};
+  --tin-green: {{colors.terminal_normal_green.light.hex}};
+  --tin-yellow: {{colors.terminal_normal_yellow.light.hex}};
+  --tin-blue: {{colors.terminal_normal_blue.light.hex}};
+  --tin-magenta: {{colors.terminal_normal_magenta.light.hex}};
+  --tin-cyan: {{colors.terminal_normal_cyan.light.hex}};
+}
+
+body,
+.theme-dark:not(.custom-user-profile-theme),
+.theme-light:not(.custom-user-profile-theme) {
+  --tin-hover-mod: color-mix(in srgb, var(--tin-text) 8%, transparent);
+  --tin-active-mod: color-mix(in srgb, var(--tin-text) 12%, transparent);
+  --tin-selected-mod: color-mix(in srgb, var(--tin-text) 16%, transparent);
+  --tin-border: color-mix(in srgb, var(--tin-faint) 40%, transparent);
+  --tin-border-subtle: color-mix(in srgb, var(--tin-faint) 25%, transparent);
+
+  --background-primary: var(--tin-chat);
+  --background-secondary: var(--tin-low);
+  --background-secondary-alt: var(--tin-mid);
+  --background-tertiary: var(--tin-base);
+  --background-floating: var(--tin-raised);
+  --background-accent: var(--tin-mid);
+  --background-modifier-hover: var(--tin-hover-mod);
+  --background-modifier-active: var(--tin-active-mod);
+  --background-modifier-selected: var(--tin-selected-mod);
+  --background-modifier-accent: var(--tin-border-subtle);
+
+  --app-frame-background: var(--tin-base);
+  --app-frame-border: var(--tin-border-subtle);
+  --background-base-lowest: var(--tin-base);
+  --background-base-lower: var(--tin-base);
+  --background-base-low: var(--tin-low);
+  --background-surface-high: var(--tin-raised);
+  --background-surface-higher: var(--tin-raised);
+  --background-surface-highest: var(--tin-raised);
+  --bg-surface-raised: var(--tin-raised);
+  --bg-surface-overlay-tmp: var(--tin-raised);
+  --chat-background-default: var(--tin-chat);
+  --home-background: var(--tin-base);
+  --panel-bg: var(--tin-low);
+  --background-mod-subtle: color-mix(in srgb, var(--tin-text) 6%, transparent);
+  --background-mod-muted: var(--tin-hover-mod);
+  --background-mod-normal: var(--tin-active-mod);
+  --background-mod-strong: var(--tin-selected-mod);
+
+  --border-faint: var(--tin-border-subtle);
+  --border-subtle: var(--tin-border-subtle);
+  --border-muted: var(--tin-border-subtle);
+  --border-normal: var(--tin-border);
+  --border-strong: var(--tin-border);
+  --border-focus: var(--tin-primary);
+
+  --text-normal: var(--tin-text);
+  --text-default: var(--tin-text);
+  --text-strong: var(--tin-text);
+  --header-primary: var(--tin-text);
+  --header-secondary: var(--tin-text-muted);
+  --text-muted: var(--tin-text-muted);
+  --text-subtle: var(--tin-text-muted);
+  --chat-text-muted: var(--tin-text-muted);
+  --text-link: var(--tin-tertiary);
+  --text-brand: var(--tin-primary);
+  --text-invert: var(--tin-base);
+  --text-danger: var(--tin-red);
+  --text-positive: var(--tin-green);
+  --text-warning: var(--tin-yellow);
+  --text-feedback-critical: var(--tin-red);
+  --text-feedback-info: var(--tin-tertiary);
+  --text-feedback-positive: var(--tin-green);
+  --text-feedback-warning: var(--tin-yellow);
+  --textbox-markdown-syntax: var(--tin-faint);
+  --logo-primary: var(--tin-text);
+
+  --interactive-normal: var(--tin-text-muted);
+  --interactive-hover: var(--tin-text);
+  --interactive-active: var(--tin-text);
+  --interactive-muted: var(--tin-faint);
+  --interactive-text-default: var(--tin-text-muted);
+  --interactive-text-hover: var(--tin-text);
+  --interactive-text-active: var(--tin-text);
+  --interactive-icon-default: var(--tin-text-muted);
+  --interactive-icon-hover: var(--tin-text);
+  --interactive-icon-active: var(--tin-text);
+  --interactive-background-hover: var(--tin-hover-mod);
+  --interactive-background-active: var(--tin-active-mod);
+  --interactive-background-selected: var(--tin-selected-mod);
+  --channels-default: var(--tin-text-muted);
+  --channel-icon: var(--tin-faint);
+
+  --icon-default: var(--tin-text-muted);
+  --icon-subtle: var(--tin-text-muted);
+  --icon-muted: var(--tin-faint);
+  --icon-strong: var(--tin-text);
+  --icon-invert: var(--tin-base);
+  --icon-link: var(--tin-tertiary);
+  --icon-feedback-critical: var(--tin-red);
+  --icon-feedback-info: var(--tin-tertiary);
+  --icon-feedback-positive: var(--tin-green);
+  --icon-feedback-warning: var(--tin-yellow);
+
+  --brand-260: var(--tin-primary);
+  --brand-360: var(--tin-primary);
+  --brand-500: var(--tin-primary);
+  --brand-560: var(--tin-primary);
+  --brand-600: var(--tin-primary);
+  --blurple-50: var(--tin-primary);
+  --background-brand: var(--tin-primary);
+  --focus-primary: var(--tin-primary);
+  --control-brand-foreground: var(--tin-primary);
+  --control-brand-foreground-new: var(--tin-primary);
+
+  --redesign-button-primary-background: var(--tin-primary);
+  --redesign-button-primary-pressed-background: var(--tin-primary);
+  --redesign-button-primary-text: var(--tin-on-primary);
+  --redesign-button-selected-background: var(--tin-primary);
+  --redesign-button-selected-pressed-background: var(--tin-primary);
+  --redesign-button-selected-text: var(--tin-on-primary);
+  --redesign-button-secondary-background: var(--tin-mid);
+  --redesign-button-secondary-pressed-background: var(--tin-raised);
+  --redesign-button-secondary-text: var(--tin-text);
+  --redesign-button-destructive-background: var(--tin-error);
+  --redesign-button-destructive-pressed-background: var(--tin-error);
+  --redesign-button-destructive-text: var(--tin-on-error);
+  --redesign-button-danger-background: var(--tin-error);
+  --redesign-button-active-background: var(--tin-green);
+  --redesign-button-active-text: var(--tin-base);
+
+  --mention-background: color-mix(in srgb, var(--tin-primary) 15%, transparent);
+  --mention-foreground: var(--tin-primary);
+  --message-mentioned-background-default: color-mix(in srgb, var(--tin-primary) 10%, transparent);
+  --message-mentioned-background-hover: color-mix(in srgb, var(--tin-primary) 14%, transparent);
+  --message-background-hover: color-mix(in srgb, var(--tin-text) 5%, transparent);
+  --message-highlight-background-default: color-mix(in srgb, var(--tin-tertiary) 12%, transparent);
+  --message-highlight-background-hover: color-mix(in srgb, var(--tin-tertiary) 16%, transparent);
+  --message-reacted-background-default: color-mix(in srgb, var(--tin-primary) 12%, transparent);
+  --message-reacted-text-default: var(--tin-primary);
+  --reaction-background-default: var(--tin-mid);
+  --reaction-background-hover: var(--tin-raised);
+  --reaction-background-reacted-default: color-mix(in srgb, var(--tin-primary) 15%, transparent);
+  --reaction-border-reacted-default: var(--tin-primary);
+  --reaction-text-default: var(--tin-text-muted);
+  --reaction-text-reacted-default: var(--tin-primary);
+
+  --badge-background-default: var(--tin-primary);
+  --badge-text-default: var(--tin-on-primary);
+  --badge-expressive-background-default: var(--tin-primary);
+  --badge-expressive-text-default: var(--tin-on-primary);
+  --badge-notification-background: var(--tin-error);
+  --background-feedback-notification: var(--tin-error);
+  --background-feedback-critical: color-mix(in srgb, var(--tin-error) 15%, transparent);
+  --background-feedback-info: color-mix(in srgb, var(--tin-tertiary) 15%, transparent);
+  --background-feedback-positive: color-mix(in srgb, var(--tin-green) 15%, transparent);
+  --background-feedback-warning: color-mix(in srgb, var(--tin-yellow) 15%, transparent);
+  --border-feedback-critical: var(--tin-error);
+
+  --notice-background-critical: var(--tin-error);
+  --notice-text-critical: var(--tin-on-error);
+  --notice-background-info: var(--tin-tertiary);
+  --notice-text-info: var(--tin-on-tertiary);
+  --notice-background-positive: var(--tin-green);
+  --notice-text-positive: var(--tin-base);
+  --notice-background-warning: var(--tin-yellow);
+  --notice-text-warning: var(--tin-base);
+
+  --status-online: var(--tin-green);
+  --status-positive: var(--tin-green);
+  --status-idle: var(--tin-yellow);
+  --status-warning: var(--tin-yellow);
+  --status-dnd: var(--tin-error);
+  --status-danger: var(--tin-error);
+  --status-offline: var(--tin-faint);
+  --status-speaking: var(--tin-green);
+  --status-positive-background: var(--tin-green);
+  --status-positive-text: var(--tin-base);
+  --status-warning-background: var(--tin-yellow);
+  --status-warning-text: var(--tin-base);
+  --status-danger-background: var(--tin-error);
+  --status-danger-text: var(--tin-on-error);
+  --icon-status-online: var(--tin-green);
+  --icon-status-idle: var(--tin-yellow);
+  --icon-status-dnd: var(--tin-error);
+  --icon-status-offline: var(--tin-faint);
+  --text-status-online: var(--tin-green);
+  --text-status-idle: var(--tin-yellow);
+  --text-status-dnd: var(--tin-error);
+  --text-status-offline: var(--tin-faint);
+
+  --channeltextarea-background: var(--tin-mid);
+  --channel-text-area-placeholder: var(--tin-faint);
+  --input-background-default: var(--tin-mid);
+  --input-border-default: var(--tin-border);
+  --input-border-hover: var(--tin-faint);
+  --input-border-active: var(--tin-primary);
+  --input-placeholder-text-default: var(--tin-faint);
+  --input-text-default: var(--tin-text);
+
+  --embed-background: var(--tin-raised);
+  --embed-background-alternate: var(--tin-raised);
+  --background-code: var(--tin-mid);
+  --text-code: var(--tin-text);
+  --text-code-comment: var(--tin-faint);
+  --text-code-keyword: var(--tin-magenta);
+  --text-code-string: var(--tin-green);
+  --text-code-title: var(--tin-blue);
+  --text-code-section: var(--tin-blue);
+  --text-code-builtin: var(--tin-cyan);
+  --text-code-variable: var(--tin-yellow);
+  --text-code-tag: var(--tin-red);
+  --text-code-bullet: var(--tin-blue);
+  --text-code-addition: var(--tin-green);
+  --text-code-deletion: var(--tin-red);
+  --background-code-addition: color-mix(in srgb, var(--tin-green) 20%, transparent);
+  --background-code-deletion: color-mix(in srgb, var(--tin-red) 20%, transparent);
+
+  --modal-background: var(--tin-raised);
+  --modal-footer-background: var(--tin-raised);
+  --card-background-default: var(--tin-raised);
+  --spoiler-hidden-background: var(--tin-base);
+  --spoiler-hidden-background-hover: var(--tin-low);
+  --spoiler-revealed-background: var(--tin-hover-mod);
+  --progressbar-indicator-background: var(--tin-primary);
+  --progressbar-track-background: var(--tin-mid);
+  --spine-default: var(--tin-border);
+  --thread-channel-spine: var(--tin-border);
+
+  --scrollbar-auto-thumb: color-mix(in srgb, var(--tin-faint) 50%, transparent);
+  --scrollbar-auto-track: transparent;
+  --scrollbar-thin-thumb: color-mix(in srgb, var(--tin-faint) 50%, transparent);
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-scrollbar-color-thumb: color-mix(in srgb, var(--tin-faint) 50%, transparent);
+  --scrollbar-auto-scrollbar-color-track: transparent;
+}

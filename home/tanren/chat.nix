@@ -9,6 +9,11 @@
       minimizeToTray = true;
       hardwareAcceleration = true;
     };
+
+    vencord.settings = {
+      useQuickCss = true;
+      enabledThemes = [ "tincture.theme.css" ];
+    };
   };
 
   home.packages = [ pkgs.telegram-desktop ];

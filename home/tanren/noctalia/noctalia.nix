@@ -16,8 +16,12 @@ in
 
   home.packages = [ pkgs.mpvpaper ];
 
-  xdg.configFile."noctalia/templates/fuzzel.ini".source = ./templates/fuzzel.ini;
-  xdg.configFile."noctalia/templates/fastfetch.jsonc".source = ./templates/fastfetch.jsonc;
+  xdg.configFile = {
+    "noctalia/templates/fuzzel.ini".source = ./templates/fuzzel.ini;
+    "noctalia/templates/fastfetch.jsonc".source = ./templates/fastfetch.jsonc;
+    "noctalia/templates/vscode-dark.json".source = ./templates/vscode-dark.json;
+    "noctalia/templates/vscode-light.json".source = ./templates/vscode-light.json;
+  };
 
   programs.noctalia = {
     enable = true;
@@ -68,20 +72,32 @@ in
             "neovim"
             "pywalfox"
             "telegram"
-            "vscode"
             "yazi"
             "zathura"
             "bat"
           ];
 
-          user.fuzzel = {
-            input_path = "templates/fuzzel.ini";
-            output_path = "~/.config/fuzzel/noctalia.ini";
-          };
+          user = {
+            fuzzel = {
+              input_path = "templates/fuzzel.ini";
+              output_path = "~/.config/fuzzel/noctalia.ini";
+            };
 
-          user.fastfetch = {
-            input_path = "templates/fastfetch.jsonc";
-            output_path = "~/.config/fastfetch/config.jsonc";
+            fastfetch = {
+              input_path = "templates/fastfetch.jsonc";
+              output_path = "~/.config/fastfetch/config.jsonc";
+            };
+
+            vscode-dark = {
+              input_path = "templates/vscode-dark.json";
+              output_path = "~/.vscode/extensions/tincture-theme/themes/tincture-dark-color-theme.json";
+            };
+
+            vscode-light = {
+              input_path = "templates/vscode-light.json";
+              output_path = "~/.vscode/extensions/tincture-theme/themes/tincture-light-color-theme.json";
+            };
+
           };
         };
       };

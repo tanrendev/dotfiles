@@ -1,0 +1,23 @@
+{
+  "name": "tincture-theme",
+  "displayName": "Tincture Theme",
+  "publisher": "tanren",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Tincture Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/tincture-dark-color-theme.json"
+      },
+      {
+        "label": "Tincture Light",
+        "uiTheme": "vs",
+        "path": "./themes/tincture-light-color-theme.json"
+      }
+    ]
+  }
+}

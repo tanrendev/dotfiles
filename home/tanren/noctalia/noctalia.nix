@@ -60,7 +60,6 @@ in
 
           enable_community_templates = true;
           community_ids = [
-            "bat"
             "discord"
             "gimp"
             "inkscape"
@@ -72,6 +71,7 @@ in
             "vscode"
             "yazi"
             "zathura"
+            "bat"
           ];
 
           user.fuzzel = {

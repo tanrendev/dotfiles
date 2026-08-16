@@ -1,6 +1,13 @@
-{ inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   imports = [ inputs.nix-index-database.homeModules.default ];
+
+  systemd.user.sessionVariables.STARSHIP_CONFIG = "${config.xdg.configHome}/starship.toml";
 
   xdg.configFile = {
     "fastfetch/owl-dark.png".source = ./fastfetch/owl-dark.png;

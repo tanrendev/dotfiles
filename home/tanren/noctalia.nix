@@ -16,7 +16,7 @@
     enable = true;
     systemd.enable = true;
 
-    customPalettes.grimoire = lib.importJSON ./noctalia-palettes/grimoire.json;
+    customPalettes.tincture = lib.importJSON ./noctalia-palettes/tincture.json;
 
     settings = {
       shell = {
@@ -36,7 +36,7 @@
       theme = {
         mode = "dark";
         source = "custom";
-        custom_palette = "grimoire";
+        custom_palette = "tincture";
 
         templates = {
           builtin_ids = [

@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 {
-  home.packages = [ pkgs.nano ];
+  home.packages = [
+    pkgs.nano
+    pkgs.ty
+  ];
 
   xdg.configFile."Code/User/settings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Workshop/ostal/dotfiles/home/tanren/vscode-settings.json";

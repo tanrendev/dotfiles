@@ -25,6 +25,7 @@
   "explorer.confirmDelete": false,
   "git.autofetch": true,
   "explorer.confirmDragAndDrop": false,
+  "ty.importStrategy": "fromEnvironment",
   "luau-lsp.platform.type": "standard",
   "luau-lsp.types.definitionFiles": {
     "noctalia": "/home/tanren/Workshop/ostal/familiar/noctalia.d.luau"

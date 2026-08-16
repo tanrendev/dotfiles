@@ -40,4 +40,9 @@ in
       package = papirus;
     };
   };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "qtct";
+  };
 }

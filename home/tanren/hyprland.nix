@@ -116,7 +116,7 @@ in
         };
 
         decoration = {
-          blur.enabled = false;
+          blur.enabled = true;
           shadow.enabled = false;
         };
 
@@ -137,14 +137,20 @@ in
         animations.enabled = false;
       };
 
-      window_rule = {
-        match.class = "dev.noctalia.Noctalia";
-        float = true;
-        size = [
-          1080
-          920
-        ];
-      };
+      window_rule = [
+        {
+          match.class = "dev.noctalia.Noctalia";
+          float = true;
+          size = [
+            1080
+            920
+          ];
+        }
+        {
+          match.class = "thunar";
+          opacity = "0.8 0.8";
+        }
+      ];
 
       bind = [
         (bind "Terminal" "Return" (exec "kitty"))

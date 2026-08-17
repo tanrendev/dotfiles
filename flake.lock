@@ -3,11 +3,11 @@
     "familiar": {
       "flake": false,
       "locked": {
-        "lastModified": 1786831353,
-        "narHash": "sha256-6wBMmCoTiZT7FKWrY7ID5vkNNDjjUZoYvEMuM2C6URY=",
+        "lastModified": 1786906434,
+        "narHash": "sha256-TfQio2bXRZ631TbKyjvHPLpBWeBHxCLYglNU0LFDdKU=",
         "owner": "tanrendev",
         "repo": "familiar",
-        "rev": "d340ca4fe4ddf3ff936c55812f17aaeb8d81f4c2",
+        "rev": "7ef6bcfc50f74fa05f4c70a0f2fbbbad9d879759",
         "type": "github"
       },
       "original": {
@@ -131,11 +131,11 @@
     "patina": {
       "flake": false,
       "locked": {
-        "lastModified": 1786879549,
-        "narHash": "sha256-O/6cT8Z4iiOGA9/LHV+hEBmlPpozHazbLZp9QS/TXYw=",
+        "lastModified": 1786906439,
+        "narHash": "sha256-aYkOKxfk+1POoVEgEtqZo0vQ8KY8X3BPDLKPmBGalSI=",
         "owner": "tanrendev",
         "repo": "patina",
-        "rev": "ff54cae079ef3cf740f90d53a04fd8d0780073c6",
+        "rev": "f87b1364673b64ff8d59f9e5b62998029c7546b8",
         "type": "github"
       },
       "original": {

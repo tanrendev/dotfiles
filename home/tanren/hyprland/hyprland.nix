@@ -96,6 +96,8 @@ in
     portalPackage = null;
     systemd.enable = false;
 
+    extraLuaFiles.theme = ./theme.lua;
+
     settings = {
       mod = {
         _var = "SUPER";

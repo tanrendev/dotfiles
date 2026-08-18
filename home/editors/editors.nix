@@ -8,7 +8,7 @@
   home.file.".vscode/extensions/tincture-theme/package.json".source = ./tincture-theme.json;
 
   xdg.configFile."Code/User/settings.json".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Workshop/ostal/dotfiles/home/tanren/editors/vscode-settings.json";
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Workshop/ostal/dotfiles/home/editors/vscode-settings.json";
 
   programs = {
     helix = {

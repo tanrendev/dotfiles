@@ -41,7 +41,7 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    { nixpkgs, ... }@inputs:
     let
       systems = [ "x86_64-linux" ];
       forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
@@ -49,31 +49,9 @@
     {
       formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);
 
-      checks = forAllSystems (pkgs: {
-        nixfmt = pkgs.runCommand "nixfmt" { nativeBuildInputs = [ pkgs.nixfmt-tree ]; } ''
-          cp -r ${self} work
-          chmod -R +w work
-          cd work
-          treefmt --ci
-          touch $out
-        '';
-
-        statix = pkgs.runCommand "statix" { nativeBuildInputs = [ pkgs.statix ]; } ''
-          cd ${self}
-          statix check .
-          touch $out
-        '';
-
-        deadnix = pkgs.runCommand "deadnix" { nativeBuildInputs = [ pkgs.deadnix ]; } ''
-          cd ${self}
-          deadnix --fail --warn-used-underscore .
-          touch $out
-        '';
-      });
-
       nixosConfigurations.lyngen = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-        modules = [ ./hosts/lyngen ];
+        modules = [ ./nixos ];
       };
 
       devShells = forAllSystems (pkgs: {

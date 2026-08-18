@@ -2,6 +2,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }:
 {
@@ -39,5 +40,25 @@
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware = {
+    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    graphics.extraPackages = [ pkgs.intel-media-driver ];
+  };
+
+  environment = {
+    sessionVariables.LIBVA_DRIVER_NAME = "iHD";
+
+    systemPackages = with pkgs; [
+      ffmpeg-full
+      intel-gpu-tools
+      libva-utils
+    ];
+  };
+
+  services.thermald.enable = true;
+
+  systemd.tmpfiles.rules = [
+    "w /sys/class/power_supply/BAT0/charge_control_start_threshold - - - - 75"
+    "w /sys/class/power_supply/BAT0/charge_control_end_threshold - - - - 80"
+  ];
 }

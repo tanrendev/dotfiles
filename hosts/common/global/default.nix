@@ -4,6 +4,7 @@
     ./audio.nix
     ./bluetooth.nix
     ./boot.nix
+    ./browsers.nix
     ./dev.nix
     ./fonts.nix
     ./greeter.nix

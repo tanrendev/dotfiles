@@ -7,7 +7,7 @@
 let
   wallpapers = pkgs.runCommand "wallpapers-fallback" { } ''
     mkdir $out
-    ln -st $out ${
+    ln -st $out ${./wallpapers}/* ${
       lib.concatMapStringsSep " " (w: "${w}/share/backgrounds/nixos/*.png") (
         with pkgs.nixos-artwork.wallpapers;
         [

@@ -129,6 +129,11 @@ in
       };
 
       plugin_settings."noctalia/mpvpaper".video_directory = "~/Videos/Wallpapers";
+      plugin_settings."tanren/patina" = {
+        dark = lib.mkDefault "~/Pictures/Wallpapers/dark.png";
+        light = lib.mkDefault "~/Pictures/Wallpapers/light.jpg";
+      };
+      wallpaper.default.path = lib.mkDefault "~/Pictures/Wallpapers/dark.png";
 
       plugins = {
         enabled = [

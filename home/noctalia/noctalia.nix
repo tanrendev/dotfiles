@@ -36,6 +36,10 @@ in
         clipboard_enabled = true;
         launch_apps_as_systemd_services = true;
         font_family = "Departure Mono";
+        greeter_sync = {
+          auto_sync = true;
+          privilege_command = "/run/wrappers/bin/pkexec";
+        };
       };
 
       bar.default.start = [

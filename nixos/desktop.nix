@@ -18,7 +18,10 @@
 
     noctalia-greeter = {
       enable = true;
-      settings.session.default = "Hyprland (uwsm-managed)";
+      settings = {
+        session.default = "Hyprland (uwsm-managed)";
+        appearance.scheme = "Synced";
+      };
     };
 
     gpu-screen-recorder.enable = true;
@@ -104,7 +107,19 @@
     };
   };
 
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit = {
+      enablePkexecWrapper = true;
+      extraConfig = ''
+        polkit.addRule(function(action, subject) {
+          if (action.id == "org.noctalia.greeter.apply-appearance" && subject.user == "tanren") {
+            return polkit.Result.YES;
+          }
+        });
+      '';
+    };
+  };
 
   services = {
     pipewire = {

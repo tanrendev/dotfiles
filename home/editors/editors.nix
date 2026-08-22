@@ -42,6 +42,7 @@
           ms-python.python
           ms-vscode.cmake-tools
           ms-vscode.cpptools
+          naumovs.color-highlight
           redhat.vscode-yaml
           rust-lang.rust-analyzer
           sumneko.lua

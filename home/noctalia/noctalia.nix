@@ -60,7 +60,6 @@ in
             "cava"
             "gtk3"
             "gtk4"
-            "helix"
             "hyprland"
             "kitty"
             "qt"

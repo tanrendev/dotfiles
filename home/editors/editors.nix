@@ -11,21 +11,6 @@
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Workshop/ostal/dotfiles/home/editors/vscode-settings.json";
 
   programs = {
-    helix = {
-      enable = true;
-      settings = {
-        theme = "noctalia";
-        editor = {
-          line-number = "relative";
-          cursorline = true;
-          true-color = true;
-          bufferline = "multiple";
-          indent-guides.render = true;
-          lsp.display-messages = true;
-        };
-      };
-    };
-
     neovim = {
       enable = true;
       defaultEditor = true;

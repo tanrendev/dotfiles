@@ -37,6 +37,7 @@
           geequlim.godot-tools
           golang.go
           jnoortheen.nix-ide
+          jock.svg
           ms-azuretools.vscode-docker
           ms-python.python
           ms-vscode.cmake-tools

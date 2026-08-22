@@ -27,7 +27,6 @@ in
     brave
     pywalfox-native
     tor-browser
-    ungoogled-chromium
   ];
 
   xdg.mimeApps = {

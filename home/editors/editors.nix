@@ -16,7 +16,7 @@
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
-      plugins = [ pkgs.vimPlugins.base16-nvim ];
+      plugins = [ pkgs.vimPlugins.lazy-nvim ];
       initLua = builtins.readFile ./nvim.lua;
     };
 

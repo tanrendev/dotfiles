@@ -96,7 +96,7 @@ in
     portalPackage = null;
     systemd.enable = false;
 
-    extraLuaFiles.theme = ./theme.lua;
+    extraConfig = builtins.readFile ./theme.lua;
 
     settings = {
       mod = {

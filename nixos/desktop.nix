@@ -110,7 +110,6 @@
   security = {
     rtkit.enable = true;
     polkit = {
-      enablePkexecWrapper = true;
       extraConfig = ''
         polkit.addRule(function(action, subject) {
           if (action.id == "org.noctalia.greeter.apply-appearance" && subject.user == "tanren") {

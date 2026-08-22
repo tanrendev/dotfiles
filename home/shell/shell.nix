@@ -35,10 +35,7 @@
       nix-output-monitor.enable = true;
     };
 
-    fzf = {
-      enable = true;
-      historyWidget.command = "";
-    };
+    fzf.enable = true;
 
     atuin = {
       enable = true;

@@ -1,11 +1,9 @@
-{ config, ... }:
 {
   programs.fuzzel = {
     enable = true;
 
     settings = {
       main = {
-        include = "${config.xdg.configHome}/fuzzel/noctalia.ini";
         font = "monospace:size=11";
         width = 64;
         lines = 20;

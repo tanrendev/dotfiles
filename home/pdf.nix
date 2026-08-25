@@ -10,8 +10,6 @@
       recolor = true;
       recolor-keephue = true;
     };
-
-    extraConfig = "include noctaliarc";
   };
 
   xdg.mimeApps.defaultApplications =

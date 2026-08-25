@@ -9,11 +9,6 @@
 
   systemd.user.sessionVariables.STARSHIP_CONFIG = "${config.xdg.configHome}/starship.toml";
 
-  xdg.configFile = {
-    "fastfetch/owl-dark.png".source = ./fastfetch/owl-dark.png;
-    "fastfetch/owl-light.png".source = ./fastfetch/owl-light.png;
-  };
-
   programs = {
     nix-index-database.comma.enable = true;
 

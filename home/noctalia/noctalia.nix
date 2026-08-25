@@ -16,19 +16,9 @@ in
 
   home.packages = [ pkgs.mpvpaper ];
 
-  xdg.configFile = {
-    "noctalia/templates/fuzzel.ini".source = ./templates/fuzzel.ini;
-    "noctalia/templates/fastfetch.jsonc".source = ./templates/fastfetch.jsonc;
-    "noctalia/templates/vscode-dark.json".source = ./templates/vscode-dark.json;
-    "noctalia/templates/vscode-light.json".source = ./templates/vscode-light.json;
-    "noctalia/templates/vesktop.css".source = ./templates/vesktop.css;
-  };
-
   programs.noctalia = {
     enable = true;
     systemd.enable = true;
-
-    customPalettes.tincture = lib.importJSON ./palettes/tincture.json;
 
     settings = {
       shell = {
@@ -49,65 +39,7 @@ in
         "workspaces"
       ];
 
-      theme = {
-        mode = "dark";
-        source = "custom";
-        custom_palette = "tincture";
-
-        templates = {
-          builtin_ids = [
-            "btop"
-            "cava"
-            "gtk3"
-            "gtk4"
-            "hyprland"
-            "kitty"
-            "qt"
-            "starship"
-          ];
-
-          enable_community_templates = true;
-          community_ids = [
-            "gimp"
-            "inkscape"
-            "lazygit"
-            "libreoffice"
-            "neovim"
-            "pywalfox"
-            "telegram"
-            "yazi"
-            "zathura"
-            "bat"
-          ];
-
-          user = {
-            fuzzel = {
-              input_path = "templates/fuzzel.ini";
-              output_path = "~/.config/fuzzel/noctalia.ini";
-            };
-
-            fastfetch = {
-              input_path = "templates/fastfetch.jsonc";
-              output_path = "~/.config/fastfetch/config.jsonc";
-            };
-
-            vscode-dark = {
-              input_path = "templates/vscode-dark.json";
-              output_path = "~/.vscode/extensions/tincture-theme/themes/tincture-dark-color-theme.json";
-            };
-
-            vscode-light = {
-              input_path = "templates/vscode-light.json";
-              output_path = "~/.vscode/extensions/tincture-theme/themes/tincture-light-color-theme.json";
-            };
-
-            vesktop = {
-              input_path = "templates/vesktop.css";
-              output_path = "~/.config/vesktop/themes/tincture.theme.css";
-            };
-          };
-        };
-      };
+      theme.mode = "dark";
 
       hooks.theme_mode_changed = lib.getExe themeModeHook;
 

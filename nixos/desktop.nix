@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     inputs.noctalia.nixosModules.default
@@ -119,6 +124,18 @@
       '';
     };
   };
+
+  systemd.user.services =
+    lib.genAttrs
+      [
+        "wayland-session-bindpid@"
+        "wayland-wm@"
+        "wayland-wm-env@"
+      ]
+      (_: {
+        restartIfChanged = false;
+        enableDefaultPath = false;
+      });
 
   services = {
     pipewire = {

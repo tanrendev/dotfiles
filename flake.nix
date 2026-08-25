@@ -38,6 +38,10 @@
       url = "github:tanrendev/patina";
       flake = false;
     };
+
+    umbriel.url = "git+https://github.com/noctalia-dev/umbriel";
+
+    xdg-desktop-portal-umbriel.url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
   };
 
   outputs =

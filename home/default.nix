@@ -8,7 +8,7 @@
     ./fuzzel.nix
     ./graphics.nix
     ./gtk/gtk.nix
-    ./hyprland/hyprland.nix
+    ./umbriel/umbriel.nix
     ./kitty.nix
     ./media.nix
     ./noctalia/noctalia.nix

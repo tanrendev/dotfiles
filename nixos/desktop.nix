@@ -1,19 +1,16 @@
-{
-  inputs,
-  lib,
-  pkgs,
-  ...
-}:
+{ inputs, pkgs, ... }:
 {
   imports = [
     inputs.noctalia.nixosModules.default
     inputs.noctalia-greeter.nixosModules.default
+    inputs.umbriel.nixosModules.default
   ];
 
   programs = {
-    hyprland = {
+    umbriel = {
       enable = true;
-      withUWSM = true;
+      portalPackage =
+        inputs.xdg-desktop-portal-umbriel.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
 
     noctalia = {
@@ -24,7 +21,7 @@
     noctalia-greeter = {
       enable = true;
       settings = {
-        session.default = "Hyprland (uwsm-managed)";
+        session.default = "Umbriel";
         appearance.scheme = "Synced";
       };
     };
@@ -124,18 +121,6 @@
       '';
     };
   };
-
-  systemd.user.services =
-    lib.genAttrs
-      [
-        "wayland-session-bindpid@"
-        "wayland-wm@"
-        "wayland-wm-env@"
-      ]
-      (_: {
-        restartIfChanged = false;
-        enableDefaultPath = false;
-      });
 
   services = {
     pipewire = {

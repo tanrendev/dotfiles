@@ -1,4 +1,4 @@
-NixOS flake. Hyprland with [Noctalia](https://docs.noctalia.dev/v5/).
+NixOS flake. [Umbriel](https://github.com/noctalia-dev/umbriel) with [Noctalia](https://docs.noctalia.dev/v5/).
 
 ```
 nixos-rebuild switch --flake .#lyngen

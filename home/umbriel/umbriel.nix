@@ -19,6 +19,17 @@
         shadow.enabled = false;
       };
 
+      output = {
+        "HDMI-A-2".position = [
+          0
+          0
+        ];
+        "eDP-1".position = [
+          320
+          1440
+        ];
+      };
+
       input = {
         keyboard.layout = "us";
         touchpad = {

@@ -26,6 +26,8 @@
       };
     };
 
+    dconf.enable = true;
+
     gpu-screen-recorder.enable = true;
 
     thunar = {

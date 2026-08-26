@@ -1,7 +1,14 @@
 [keybinds]
-"Mod+Escape" = "session-quit"
-"Mod+F1" = "window-focus-next"
 
+# umbriel defaults
+"Mod+Return" = "spawn:kitty"
+"Mod+T" = "window-toggle-floating"
+"Mod+P" = "window-toggle-pinned"
+"Mod+M" = "window-toggle-maximize-to-edges"
+"Mod+O" = { action = "overview-toggle", repeat = false }
+
+# focus and movement
+"Mod+F1" = "window-focus-next"
 "Mod+Left" = "window-focus-left"
 "Mod+H" = "window-focus-left"
 "Mod+Right" = "window-focus-right"
@@ -10,7 +17,6 @@
 "Mod+K" = "window-focus-up"
 "Mod+Down" = "window-focus-down"
 "Mod+J" = "window-focus-down"
-
 "Mod+Shift+Left" = "column-move-left"
 "Mod+Shift+H" = "column-move-left"
 "Mod+Shift+Right" = "column-move-right"
@@ -19,19 +25,19 @@
 "Mod+Shift+K" = "window-move-up"
 "Mod+Shift+Down" = "window-move-down"
 "Mod+Shift+J" = "window-move-down"
-
 "Mod+Comma" = "window-consume-left"
 "Mod+Period" = "window-expel-right"
 "Mod+R" = "window-cycle-width"
 "Mod+Shift+R" = "window-cycle-width-back"
+"Mod+Equal" = "window-modify-width:0.05"
+"Mod+Minus" = "window-modify-width:-0.05"
 "Mod+F" = "window-toggle-fullscreen"
 "Mod+Ctrl+F" = "window-toggle-maximize"
-"Mod+M" = "window-toggle-maximize-to-edges"
-"Mod+T" = "window-toggle-floating"
-"Mod+P" = "window-toggle-pinned"
-"Mod+O" = { action = "overview-toggle", repeat = false }
-"Mod+Shift+Space" = "spawn:noctalia msg panel-toggle control-center"
+"Mod+Q" = "window-close"
+"Mod+WheelUp" = "window-focus-left"
+"Mod+WheelDown" = "window-focus-right"
 
+# workspaces and outputs
 "Mod+1" = "workspace-switch:1"
 "Mod+2" = "workspace-switch:2"
 "Mod+3" = "workspace-switch:3"
@@ -68,6 +74,52 @@
 "Mod+Shift+KP_7" = "window-move-to-workspace:7"
 "Mod+Shift+KP_8" = "window-move-to-workspace:8"
 "Mod+Shift+KP_9" = "window-move-to-workspace:9"
+"Mod+BracketLeft" = "workspace-previous"
+"Mod+BracketRight" = "workspace-next"
+"Mod+Shift+BracketLeft" = "window-move-to-workspace-previous"
+"Mod+Shift+BracketRight" = "window-move-to-workspace-next"
+"Mod+Grave" = "scratchpad-toggle"
+"Mod+Shift+Grave" = "window-move-to-scratchpad"
+"Mod+Ctrl+Up" = "output-focus-up"
+"Mod+Ctrl+K" = "output-focus-up"
+"Mod+Ctrl+Down" = "output-focus-down"
+"Mod+Ctrl+J" = "output-focus-down"
+"Mod+Ctrl+Shift+Up" = "window-move-to-output-up"
+"Mod+Ctrl+Shift+K" = "window-move-to-output-up"
+"Mod+Ctrl+Shift+Down" = "window-move-to-output-down"
+"Mod+Ctrl+Shift+J" = "window-move-to-output-down"
 
-"Mod+WheelUp" = "window-focus-left"
-"Mod+WheelDown" = "window-focus-right"
+# session
+"Mod+Escape" = "spawn:noctalia msg panel-toggle session"
+"Mod+Shift+Escape" = "session-quit"
+"Mod+Ctrl+L" = "spawn:noctalia msg session lock"
+
+# apps
+"Mod+Space" = "spawn:noctalia msg panel-toggle launcher"
+"Mod+B" = "spawn:librewolf"
+"Mod+E" = "spawn:thunar"
+
+# noctalia and panels
+"Mod+Shift+Space" = "spawn:noctalia msg panel-toggle control-center"
+"Mod+Tab" = "spawn:noctalia msg window-switcher"
+"Mod+Slash" = "cheatsheet-toggle"
+"Mod+Shift+V" = "spawn:noctalia msg panel-toggle clipboard"
+"Mod+W" = "spawn:noctalia msg panel-toggle wallpaper"
+"Mod+Shift+W" = "spawn:noctalia msg panel-toggle noctalia/mpvpaper:picker"
+"Mod+Shift+T" = "spawn:noctalia msg theme-mode-toggle"
+"Mod+N" = "spawn:noctalia msg notification-clear-active"
+"Mod+Shift+N" = "spawn:noctalia msg notification-clear-history"
+"Mod+Ctrl+N" = "spawn:noctalia msg notification-dnd-toggle"
+Print = "spawn:noctalia msg screenshot-fullscreen"
+"Mod+Shift+S" = "spawn:noctalia msg screenshot-region"
+
+# hardware keys
+XF86AudioRaiseVolume = "spawn:noctalia msg volume-up"
+XF86AudioLowerVolume = "spawn:noctalia msg volume-down"
+XF86AudioMute = "spawn:noctalia msg volume-mute"
+XF86AudioMicMute = "spawn:noctalia msg mic-mute"
+XF86MonBrightnessUp = "spawn:noctalia msg brightness-up"
+XF86MonBrightnessDown = "spawn:noctalia msg brightness-down"
+XF86AudioPlay = "spawn:noctalia msg media toggle"
+XF86AudioNext = "spawn:noctalia msg media next"
+XF86AudioPrev = "spawn:noctalia msg media previous"

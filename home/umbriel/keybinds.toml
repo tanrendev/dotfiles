@@ -30,6 +30,7 @@
 "Mod+T" = "window-toggle-floating"
 "Mod+P" = "window-toggle-pinned"
 "Mod+O" = { action = "overview-toggle", repeat = false }
+"Mod+Shift+Space" = "spawn:noctalia msg panel-toggle control-center"
 
 "Mod+1" = "workspace-switch:1"
 "Mod+2" = "workspace-switch:2"

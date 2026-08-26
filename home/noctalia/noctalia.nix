@@ -39,7 +39,20 @@ in
         "workspaces"
       ];
 
-      theme.mode = "dark";
+      theme = {
+        mode = "dark";
+        wallpaper_scheme = "m3-content";
+        templates.builtin_ids = [
+          "btop"
+          "cava"
+          "gtk3"
+          "gtk4"
+          "kcolorscheme"
+          "kitty"
+          "qt"
+          "starship"
+        ];
+      };
 
       hooks.theme_mode_changed = lib.getExe themeModeHook;
 
@@ -72,6 +85,7 @@ in
 
       plugins = {
         enabled = [
+          "noctalia/kaomoji"
           "noctalia/mpvpaper"
           "noctalia/screen_recorder"
           "tanren/familiar"

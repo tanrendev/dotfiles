@@ -1,0 +1,13 @@
+[input.keyboard]
+layout = "us"
+
+[input.touchpad]
+tap = true
+natural_scroll = true
+
+[input.focus]
+follows_mouse = true
+
+[input.cursor]
+theme = "grimoire-cursors"
+size = 32

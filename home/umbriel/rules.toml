@@ -1,0 +1,12 @@
+[[window_rule]]
+default_floating = true
+default_size = [1080, 920]
+
+[window_rule.match]
+app_id = '^dev\.noctalia\.Noctalia$'
+
+[[window_rule]]
+opacity = 0.8
+
+[window_rule.match]
+app_id = "thunar"

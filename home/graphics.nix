@@ -12,6 +12,7 @@
     ))
     fontforge-gtk
     gimp
+    hyprpicker
     inkscape
   ];
 }

@@ -98,6 +98,7 @@
 "Mod+Space" = "spawn:noctalia msg panel-toggle launcher"
 "Mod+B" = "spawn:librewolf"
 "Mod+E" = "spawn:thunar"
+"Mod+I" = "spawn:hyprpicker -a"
 
 # noctalia and panels
 "Mod+Shift+Space" = "spawn:noctalia msg panel-toggle control-center"

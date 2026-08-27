@@ -32,6 +32,8 @@ in
         };
       };
 
+      widget.network.show_label = false;
+
       bar.default.start = [
         "tanren/familiar:owl"
         "launcher"

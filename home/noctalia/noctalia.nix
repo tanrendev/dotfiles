@@ -20,6 +20,13 @@ in
     enable = true;
     systemd.enable = true;
 
+    customPalettes = {
+      lapis = lib.importJSON ./lapis.json;
+      lyngen = lib.importJSON ./lyngen.json;
+      orikalk = lib.importJSON ./orikalk.json;
+      orikalk-lapis = lib.importJSON ./orikalk-lapis.json;
+    };
+
     settings = {
       shell = {
         polkit_agent = true;

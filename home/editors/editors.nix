@@ -52,8 +52,8 @@
           (pkgs.vscode-utils.extensionFromVscodeMarketplace {
             publisher = "astral-sh";
             name = "ty";
-            version = "2026.66.0";
-            sha256 = "0fl6c1p86sm39j7rbzwp0i0s6s6ny9ibsp98c8hc5vr65jllyqmr";
+            version = "2026.70.0";
+            sha256 = "0iq0aj9h543wnbsyx035w08z1y7w8plryfz71bcyl4diw8wmmpz8";
           })
           (pkgs.vscode-utils.extensionFromVscodeMarketplace {
             publisher = "JohnnyMorganz";

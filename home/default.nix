@@ -9,7 +9,7 @@
     ./graphics.nix
     ./gtk/gtk.nix
     ./umbriel/umbriel.nix
-    ./kitty.nix
+    ./kitty/kitty.nix
     ./media.nix
     ./noctalia/noctalia.nix
     ./office.nix

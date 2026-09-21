@@ -7,7 +7,11 @@
 let
   themeModeHook = pkgs.writeShellApplication {
     name = "theme-mode-hook";
-    runtimeInputs = [ pkgs.dconf ];
+    runtimeInputs = [
+      pkgs.coreutils
+      pkgs.dconf
+      pkgs.procps
+    ];
     text = builtins.readFile ./theme-mode-hook.sh;
   };
 in
@@ -57,7 +61,6 @@ in
           "gtk3"
           "gtk4"
           "kcolorscheme"
-          "kitty"
           "qt"
           "starship"
         ];

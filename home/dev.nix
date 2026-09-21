@@ -1,7 +1,15 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   programs = {
-    claude-code.enable = true;
+    claude-code = {
+      enable = true;
+      package = inputs.claude-code.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    };
     gh.enable = true;
     lazygit.enable = true;
 

@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
+    claude-code.url = "github:sadjow/claude-code-nix";
+
     familiar = {
       url = "github:tanrendev/familiar";
       flake = false;

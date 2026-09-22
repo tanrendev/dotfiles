@@ -33,5 +33,6 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "claudeCode.hideOnboarding": true
 }

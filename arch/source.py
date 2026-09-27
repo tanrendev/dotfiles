@@ -5,16 +5,12 @@ sys.dont_write_bytecode = True
 
 import decman
 from home.browsers.browsers import Browsers
-from home.chat.chat import Chat
 from home.dev import Dev
 from home.editors.editors import Editors
-from home.fuzzel.fuzzel import Fuzzel
-from home.graphics import Graphics
 from home.gtk.gtk import Gtk
 from home.kitty.kitty import Kitty
 from home.media.media import Media
 from home.noctalia.noctalia import Noctalia
-from home.office import Office
 from home.pdf.pdf import Pdf
 from home.removable_media.removable_media import RemovableMedia
 from home.shell.shell import Shell
@@ -26,30 +22,24 @@ from system.cursor.cursor import Cursor
 from system.desktop.desktop import Desktop
 from system.greeter.greeter import Greeter
 from system.hardware.hardware import Hardware
-from system.multilib import Multilib
 
 decman.execution_order = ["pacman", "aur", "files", "systemd"]
 
 decman.modules += [
     users,
     Base(),
-    Multilib(),
     Boot(),
     Hardware(),
     Desktop(),
     Cursor(),
     Greeter(),
     Browsers(),
-    Chat(),
     Dev(),
     Editors(),
-    Fuzzel(),
-    Graphics(),
     Gtk(),
     Kitty(),
     Media(),
     Noctalia(),
-    Office(),
     Pdf(),
     RemovableMedia(),
     Shell(),

@@ -1,0 +1,20 @@
+[credential "https://gist.github.com"]
+	helper = ""
+	helper = "/usr/bin/gh auth git-credential"
+
+[credential "https://github.com"]
+	helper = ""
+	helper = "/usr/bin/gh auth git-credential"
+
+[interactive]
+	diffFilter = delta --color-only
+
+[pager]
+	blame = delta
+	diff = delta
+	log = delta
+	show = delta
+
+[user]
+	email = hello@tanren.dev
+	name = tanren

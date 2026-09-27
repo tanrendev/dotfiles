@@ -1,0 +1,73 @@
+[bar.default]
+start = ["tanren/familiar:owl", "launcher", "wallpaper", "workspaces"]
+
+[hooks]
+theme_mode_changed = "bash ~/.config/noctalia/theme-mode-hook.sh"
+
+[idle.behavior.lock]
+action = "lock"
+enabled = true
+timeout = 600
+
+[idle.behavior.screen-off]
+action = "screen_off"
+enabled = true
+timeout = 660
+
+[location]
+auto_locate = true
+
+[plugin_settings."noctalia/mpvpaper"]
+video_directory = "~/Videos/Wallpapers"
+
+[plugin_settings."tanren/patina"]
+dark = "~/Pictures/Wallpapers/dark.png"
+light = "~/Pictures/Wallpapers/light.jpg"
+
+[plugins]
+auto_update = "none"
+enabled = ["noctalia/kaomoji", "noctalia/mpvpaper", "noctalia/screen_recorder", "tanren/familiar", "tanren/patina"]
+
+[[plugins.source]]
+enabled = true
+kind = "git"
+location = "https://github.com/noctalia-dev/official-plugins"
+name = "official"
+
+[[plugins.source]]
+enabled = true
+kind = "git"
+location = "https://github.com/tanrendev/familiar"
+name = "familiar"
+
+[[plugins.source]]
+enabled = true
+kind = "git"
+location = "https://github.com/tanrendev/patina"
+name = "patina"
+
+[shell]
+clipboard_enabled = true
+font_family = "Departure Mono"
+launch_apps_as_systemd_services = true
+polkit_agent = true
+
+[shell.greeter_sync]
+auto_sync = true
+
+[theme]
+mode = "dark"
+wallpaper_scheme = "m3-content"
+
+[theme.templates]
+builtin_ids = ["btop", "cava", "gtk3", "gtk4", "kcolorscheme", "qt", "starship"]
+
+[wallpaper.default]
+path = "~/Pictures/Wallpapers/dark.png"
+
+[weather]
+enabled = true
+unit = "celsius"
+
+[widget.network]
+show_label = false

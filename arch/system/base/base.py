@@ -6,7 +6,6 @@ from decman.plugins import aur, pacman, systemd
 here = "system/base"
 users = UserManager()
 users.add_user(User(username="tanren", shell="/usr/bin/fish", groups=None))
-users.add_user_to_group("tanren", "docker")
 
 
 class Base(decman.Module):
@@ -24,7 +23,6 @@ class Base(decman.Module):
             "btrfs-progs",
             "curl",
             "dmidecode",
-            "docker",
             "efibootmgr",
             "ethtool",
             "fish",
@@ -74,7 +72,6 @@ class Base(decman.Module):
     @systemd.units
     def units(self) -> set[str]:
         return {
-            "docker.service",
             "NetworkManager.service",
             "nftables.service",
             "paccache.timer",

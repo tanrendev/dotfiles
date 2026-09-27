@@ -9,10 +9,7 @@ from home.dev import Dev
 from home.editors.editors import Editors
 from home.gtk.gtk import Gtk
 from home.kitty.kitty import Kitty
-from home.media.media import Media
 from home.noctalia.noctalia import Noctalia
-from home.pdf.pdf import Pdf
-from home.removable_media.removable_media import RemovableMedia
 from home.shell.shell import Shell
 from home.umbriel.umbriel import Umbriel
 from home.xdg.xdg import Xdg
@@ -40,10 +37,7 @@ decman.modules += [
     Editors(),
     Gtk(),
     Kitty(),
-    Media(),
     Noctalia(),
-    Pdf(),
-    RemovableMedia(),
     Shell(),
     Umbriel(),
     Xdg(),

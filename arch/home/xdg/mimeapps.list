@@ -1,21 +1,4 @@
 [Default Applications]
-application/eps=org.pwmt.zathura-ps.desktop
-application/epub+zip=org.pwmt.zathura-pdf-mupdf.desktop
-application/oxps=org.pwmt.zathura-pdf-mupdf.desktop
-application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
-application/postscript=org.pwmt.zathura-ps.desktop
-application/x-fictionbook=org.pwmt.zathura-pdf-mupdf.desktop
-application/x-mobipocket-ebook=org.pwmt.zathura-pdf-mupdf.desktop
-image/avif=swayimg.desktop
-image/bmp=swayimg.desktop
-image/gif=swayimg.desktop
-image/jpeg=swayimg.desktop
-image/png=swayimg.desktop
-image/svg+xml=swayimg.desktop
-image/tiff=swayimg.desktop
-image/vnd.djvu=org.pwmt.zathura-djvu.desktop
-image/vnd.djvu+multipage=org.pwmt.zathura-djvu.desktop
-image/webp=swayimg.desktop
 inode/directory=thunar.desktop
 text/html=brave-origin.desktop
 x-scheme-handler/http=brave-origin.desktop

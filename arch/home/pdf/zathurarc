@@ -1,5 +1,0 @@
-set selection-clipboard clipboard
-set adjust-open width
-set scroll-page-aware true
-set recolor true
-set recolor-keephue true

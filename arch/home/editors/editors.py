@@ -1,8 +1,11 @@
+import os
+
 import decman
 from decman import File, Symlink
 from decman.plugins import aur, pacman
 
 home = "/home/tanren"
+here = os.path.abspath("home/editors")
 
 
 class Editors(decman.Module):
@@ -27,7 +30,6 @@ class Editors(decman.Module):
     def symlinks(self) -> dict[str, str | Symlink]:
         return {
             f"{home}/.config/Code/User/settings.json": Symlink(
-                f"{home}/Workshop/ostal/dotfiles/arch/home/editors/vscode-settings.json",
-                owner="tanren",
+                f"{here}/vscode-settings.json", owner="tanren"
             ),
         }

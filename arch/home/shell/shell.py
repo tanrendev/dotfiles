@@ -26,6 +26,7 @@ class Shell(decman.Module):
             "git-delta",
             "imagemagick",
             "jq",
+            "lazygit",
             "ouch",
             "poppler",
             "resvg",

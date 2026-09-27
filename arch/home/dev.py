@@ -8,28 +8,7 @@ class Dev(decman.Module):
 
     @pacman.packages
     def pacman_packages(self) -> set[str]:
-        return {
-            "bun",
-            "gcc",
-            "github-cli",
-            "glab",
-            "go",
-            "godot",
-            "lazygit",
-            "lua-language-server",
-            "luacheck",
-            "make",
-            "nodejs",
-            "npm",
-            "pkgconf",
-            "rustup",
-            "shellcheck",
-            "shfmt",
-            "stylua",
-            "taplo-cli",
-            "uv",
-            "yaml-language-server",
-        }
+        return {"github-cli"}
 
     @aur.packages
     def aur_packages(self) -> set[str]:

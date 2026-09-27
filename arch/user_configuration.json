@@ -1,0 +1,228 @@
+{
+    "app_config": {
+        "audio_config": {
+            "audio": "pipewire"
+        },
+        "bluetooth_config": {
+            "enabled": true
+        },
+        "firewall_config": {
+            "firewall": "ufw"
+        },
+        "fonts_config": {
+            "fonts": [
+                "noto-fonts",
+                "noto-fonts-emoji",
+                "noto-fonts-cjk",
+                "ttf-liberation",
+                "ttf-dejavu"
+            ]
+        },
+        "power_management_config": {
+            "power_management": "power-profiles-daemon"
+        }
+    },
+    "archinstall_language": "English",
+    "auth_config": {},
+    "bootloader_config": {
+        "bootloader": "Limine",
+        "removable": true,
+        "uki": false
+    },
+    "custom_commands": [],
+    "disk_config": {
+        "btrfs_options": {
+            "snapshot_config": {
+                "type": "Snapper"
+            }
+        },
+        "config_type": "manual_partitioning",
+        "device_modifications": [
+            {
+                "device": "/dev/nvme0n1",
+                "partitions": [
+                    {
+                        "btrfs": [],
+                        "dev_path": null,
+                        "flags": [
+                            "boot",
+                            "esp"
+                        ],
+                        "fs_type": "fat32",
+                        "mount_options": [],
+                        "mountpoint": "/boot",
+                        "obj_id": "30cdddf7-0138-4932-a67b-07b4052d3453",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "GiB",
+                            "value": 4
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "MiB",
+                            "value": 1
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    },
+                    {
+                        "btrfs": [
+                            {
+                                "mountpoint": "/",
+                                "name": "@"
+                            },
+                            {
+                                "mountpoint": "/home",
+                                "name": "@home"
+                            },
+                            {
+                                "mountpoint": "/var/log",
+                                "name": "@log"
+                            },
+                            {
+                                "mountpoint": "/var/cache/pacman/pkg",
+                                "name": "@pkg"
+                            }
+                        ],
+                        "dev_path": null,
+                        "flags": [],
+                        "fs_type": "btrfs",
+                        "mount_options": [
+                            "compress=zstd"
+                        ],
+                        "mountpoint": null,
+                        "obj_id": "82e8212e-a3b8-45d4-bbbc-c360fb86d0c6",
+                        "size": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 507812773888
+                        },
+                        "start": {
+                            "sector_size": {
+                                "unit": "B",
+                                "value": 512
+                            },
+                            "unit": "B",
+                            "value": 4296015872
+                        },
+                        "status": "create",
+                        "type": "primary"
+                    }
+                ],
+                "wipe": false
+            }
+        ],
+        "disk_encryption": {
+            "encryption_type": "luks",
+            "lvm_volumes": [],
+            "partitions": [
+                "82e8212e-a3b8-45d4-bbbc-c360fb86d0c6"
+            ]
+        }
+    },
+    "hostname": "lyngen",
+    "kernels": [
+        "linux",
+        "linux-lts"
+    ],
+    "locale_config": {
+        "console_font": "default8x16",
+        "kb_layout": "us",
+        "sys_enc": "UTF-8",
+        "sys_lang": "en_US.UTF-8"
+    },
+    "mirror_config": {
+        "custom_repositories": [],
+        "custom_servers": [],
+        "mirror_regions": {
+            "Netherlands": [
+                "http://ftp.nluug.nl/os/Linux/distr/archlinux/$repo/os/$arch",
+                "http://mirror.ams1.nl.leaseweb.net/archlinux/$repo/os/$arch",
+                "https://mirror.ams1.nl.leaseweb.net/archlinux/$repo/os/$arch",
+                "http://ftp.snt.utwente.nl/pub/os/linux/archlinux/$repo/os/$arch",
+                "http://nl.mirrors.cicku.me/archlinux/$repo/os/$arch",
+                "https://nl.mirrors.cicku.me/archlinux/$repo/os/$arch",
+                "http://archlinux.mirror.wearetriple.com/$repo/os/$arch",
+                "https://archlinux.mirror.wearetriple.com/$repo/os/$arch",
+                "http://mirror.koddos.net/archlinux/$repo/os/$arch",
+                "https://mirror.koddos.net/archlinux/$repo/os/$arch",
+                "http://arch.mirrors.lavatech.top/$repo/os/$arch",
+                "https://arch.mirrors.lavatech.top/$repo/os/$arch",
+                "http://mirrors.xtom.nl/archlinux/$repo/os/$arch",
+                "https://mirrors.xtom.nl/archlinux/$repo/os/$arch",
+                "http://mirror.mijn.host/archlinux/$repo/os/$arch",
+                "https://mirror.mijn.host/archlinux/$repo/os/$arch",
+                "http://archlinux.mirror.liteserver.nl/$repo/os/$arch",
+                "https://archlinux.mirror.liteserver.nl/$repo/os/$arch",
+                "http://mirror.lyrahosting.com/archlinux/$repo/os/$arch",
+                "https://mirror.lyrahosting.com/archlinux/$repo/os/$arch",
+                "http://mirror.cj2.nl/archlinux/$repo/os/$arch",
+                "https://mirror.cj2.nl/archlinux/$repo/os/$arch",
+                "https://mirror.iusearchbtw.nl/$repo/os/$arch",
+                "http://nl.mirror.flokinet.net/archlinux/$repo/os/$arch",
+                "https://nl.mirror.flokinet.net/archlinux/$repo/os/$arch",
+                "http://mirrors.evoluso.com/archlinux/$repo/os/$arch",
+                "http://mirror.bouwhuis.network/archlinux/$repo/os/$arch",
+                "https://mirror.bouwhuis.network/archlinux/$repo/os/$arch",
+                "http://ams.nl.mirrors.bjg.at/arch/$repo/os/$arch",
+                "https://ams.nl.mirrors.bjg.at/arch/$repo/os/$arch",
+                "https://nl.arch.niranjan.co/$repo/os/$arch",
+                "http://mirror.nl.cdn-perfprod.com/archlinux/$repo/os/$arch",
+                "https://mirror.nl.cdn-perfprod.com/archlinux/$repo/os/$arch",
+                "http://mirror.nyaa.vc/archlinux/$repo/os/$arch",
+                "https://mirror.nyaa.vc/archlinux/$repo/os/$arch",
+                "http://nl.mirror.cx/archlinux/$repo/os/$arch",
+                "https://nl.mirror.cx/archlinux/$repo/os/$arch",
+                "https://nl.mirrors.mk/archlinux/$repo/os/$arch"
+            ]
+        },
+        "optional_repositories": []
+    },
+    "network_config": {
+        "type": "nm"
+    },
+    "ntp": true,
+    "packages": [
+        "base-devel",
+        "git",
+        "intel-media-driver",
+        "man-db",
+        "man-pages",
+        "mesa",
+        "nano",
+        "vulkan-intel",
+        "sof-firmware",
+        "fwupd",
+        "snap-pac"
+    ],
+    "pacman_config": {
+        "color": true,
+        "parallel_downloads": 5
+    },
+    "profile_config": {
+        "gfx_driver": null,
+        "greeter": null,
+        "profile": {
+            "custom_settings": {},
+            "details": [],
+            "main": "Minimal"
+        }
+    },
+    "script": null,
+    "services": [],
+    "swap": {
+        "algorithm": "zstd",
+        "enabled": true
+    },
+    "timezone": "Europe/Amsterdam",
+    "version": "4.4"
+}

@@ -1,4 +1,10 @@
-{ inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     inputs.noctalia.nixosModules.default
@@ -115,15 +121,11 @@
 
   security = {
     rtkit.enable = true;
-    polkit = {
-      extraConfig = ''
-        polkit.addRule(function(action, subject) {
-          if (action.id == "org.noctalia.greeter.apply-appearance" && subject.user == "tanren") {
-            return polkit.Result.YES;
-          }
-        });
-      '';
-    };
+    polkit.extraConfig =
+      lib.replaceStrings
+        [ "@program@" ]
+        [ (lib.getExe' config.programs.noctalia-greeter.package "noctalia-greeter-apply-appearance") ]
+        (builtins.readFile ./greeter-sync.rules);
   };
 
   services = {

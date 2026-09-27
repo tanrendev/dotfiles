@@ -8,7 +8,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./hardware.nix
-    ./desktop.nix
+    ./desktop/desktop.nix
   ];
 
   networking.hostName = "lyngen";

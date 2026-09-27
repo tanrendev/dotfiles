@@ -1,0 +1,13 @@
+polkit.addRule(function (action, subject) {
+  var allowedUsers = ["tanren"];
+  if (
+    action.id == "org.noctalia.greeter.apply-appearance" &&
+    action.lookup("program") == "@program@" &&
+    action.lookup("user") == "root" &&
+    subject.local &&
+    subject.active &&
+    allowedUsers.indexOf(subject.user) >= 0
+  ) {
+    return polkit.Result.YES;
+  }
+});

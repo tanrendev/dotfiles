@@ -35,7 +35,6 @@ class Shell(decman.Module):
             "tealdeer",
             "unzip",
             "wl-clipboard",
-            "yazi",
             "zip",
             "zoxide",
         }
@@ -48,7 +47,6 @@ class Shell(decman.Module):
         return {
             f"{config}/fish/config.fish": File(source_file="home/shell/config.fish", owner="tanren"),
             f"{config}/fish/init.fish": File(source_file="home/shell/init.fish", owner="tanren"),
-            f"{config}/fish/functions/y.fish": File(source_file="home/shell/y.fish", owner="tanren"),
             f"{config}/atuin/config.toml": File(source_file="home/shell/atuin.toml", owner="tanren"),
             f"{config}/git/config": File(source_file="home/shell/gitconfig", owner="tanren"),
             f"{config}/environment.d/starship.conf": File(

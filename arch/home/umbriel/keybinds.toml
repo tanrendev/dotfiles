@@ -105,7 +105,6 @@
 "Mod+Slash" = "cheatsheet-toggle"
 "Mod+Shift+V" = "spawn:noctalia msg panel-toggle clipboard"
 "Mod+W" = "spawn:noctalia msg panel-toggle wallpaper"
-"Mod+Shift+W" = "spawn:noctalia msg panel-toggle noctalia/mpvpaper:picker"
 "Mod+Shift+T" = "spawn:noctalia msg theme-mode-toggle"
 "Mod+N" = "spawn:noctalia msg notification-clear-active"
 "Mod+Shift+N" = "spawn:noctalia msg notification-clear-history"

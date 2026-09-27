@@ -17,16 +17,13 @@ timeout = 660
 [location]
 auto_locate = true
 
-[plugin_settings."noctalia/mpvpaper"]
-video_directory = "~/Videos/Wallpapers"
-
 [plugin_settings."tanren/patina"]
 dark = "~/Pictures/Wallpapers/dark.png"
 light = "~/Pictures/Wallpapers/light.jpg"
 
 [plugins]
 auto_update = "none"
-enabled = ["noctalia/kaomoji", "noctalia/mpvpaper", "noctalia/screen_recorder", "tanren/familiar", "tanren/patina"]
+enabled = ["noctalia/kaomoji","noctalia/screen_recorder", "tanren/familiar", "tanren/patina"]
 
 [[plugins.source]]
 enabled = true

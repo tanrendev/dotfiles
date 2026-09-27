@@ -74,7 +74,6 @@ class Xdg(decman.Module):
             f"{home}/.config/mimeapps.list": File(
                 source_file=f"{here}/mimeapps.list", owner="tanren"
             ),
-            f"{home}/Videos/Wallpapers/.keep": File(content="", owner="tanren"),
         }
         for name, (rev, sri) in fallbacks.items():
             files[f"{home}/Pictures/Wallpapers/{name}"] = File(

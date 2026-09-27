@@ -1,6 +1,6 @@
 import decman
 from decman import File
-from decman.plugins import aur, pacman, systemd
+from decman.plugins import pacman, systemd
 
 config = "/home/tanren/.config/noctalia"
 palettes = ["lapis", "lyngen", "orikalk", "orikalk-lapis"]
@@ -13,10 +13,6 @@ class Noctalia(decman.Module):
     @pacman.packages
     def pacman_packages(self) -> set[str]:
         return {"noctalia"}
-
-    @aur.packages
-    def aur_packages(self) -> set[str]:
-        return {"mpvpaper"}
 
     @systemd.user_units
     def user_units(self) -> dict[str, set[str]]:

@@ -13,8 +13,6 @@ class Desktop(decman.Module):
     def pacman_packages(self) -> set[str]:
         return {
             "dconf",
-            "file-roller",
-            "gpu-screen-recorder",
             "gvfs",
             "noto-fonts",
             "noto-fonts-cjk",
@@ -22,8 +20,6 @@ class Desktop(decman.Module):
             "power-profiles-daemon",
             "rtkit",
             "thunar",
-            "thunar-archive-plugin",
-            "thunar-media-tags-plugin",
             "thunar-volman",
             "ttf-dejavu",
             "ttf-jetbrains-mono-nerd",

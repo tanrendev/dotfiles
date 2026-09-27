@@ -9,7 +9,6 @@ params = [
     "loglevel=0",
     "udev.log_level=3",
     "rd.udev.log_level=3",
-    "rd.systemd.show_status=false",
 ]
 
 
@@ -19,7 +18,7 @@ class Boot(decman.Module):
 
     @pacman.packages
     def pacman_packages(self) -> set[str]:
-        return {"plymouth"}
+        return {"cryptsetup", "limine", "plymouth"}
 
     @aur.packages
     def aur_packages(self) -> set[str]:
@@ -32,7 +31,7 @@ class Boot(decman.Module):
         }
 
     def after_update(self, store):
-        decman.prg(["bash", f"{here}/entries.sh", *params])
+        decman.prg(["bash", f"{here}/cmdline.sh", *params])
 
     def on_change(self, store):
         self.after_update(store)

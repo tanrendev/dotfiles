@@ -21,12 +21,14 @@ class Base(decman.Module):
             "bind",
             "bluez",
             "bluez-utils",
+            "btrfs-progs",
             "curl",
             "dmidecode",
             "docker",
             "efibootmgr",
             "ethtool",
             "fish",
+            "fwupd",
             "git",
             "gst-plugin-pipewire",
             "intel-ucode",
@@ -34,8 +36,11 @@ class Base(decman.Module):
             "libpulse",
             "linux",
             "linux-firmware",
+            "linux-lts",
             "lm_sensors",
             "lsof",
+            "man-db",
+            "man-pages",
             "mkinitcpio",
             "mtr",
             "nano",
@@ -68,7 +73,13 @@ class Base(decman.Module):
 
     @systemd.units
     def units(self) -> set[str]:
-        return {"docker.service", "NetworkManager.service", "nftables.service", "paccache.timer"}
+        return {
+            "docker.service",
+            "NetworkManager.service",
+            "nftables.service",
+            "paccache.timer",
+            "systemd-timesyncd.service",
+        }
 
     def files(self) -> dict[str, File]:
         return {

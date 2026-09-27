@@ -16,6 +16,7 @@ class Hardware(decman.Module):
             "intel-gpu-tools",
             "intel-media-driver",
             "libva-utils",
+            "mesa",
             "thermald",
             "vulkan-intel",
         }

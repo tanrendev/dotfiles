@@ -22,6 +22,7 @@ from system.cursor.cursor import Cursor
 from system.desktop.desktop import Desktop
 from system.greeter.greeter import Greeter
 from system.hardware.hardware import Hardware
+from system.snapshots import Snapshots
 
 decman.execution_order = ["pacman", "aur", "files", "systemd"]
 
@@ -29,6 +30,7 @@ decman.modules += [
     users,
     Base(),
     Boot(),
+    Snapshots(),
     Hardware(),
     Desktop(),
     Cursor(),

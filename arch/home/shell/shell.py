@@ -46,7 +46,4 @@ class Shell(decman.Module):
             f"{config}/fish/init.fish": File(source_file="home/shell/init.fish", owner="tanren"),
             f"{config}/atuin/config.toml": File(source_file="home/shell/atuin.toml", owner="tanren"),
             f"{config}/git/config": File(source_file="home/shell/gitconfig", owner="tanren"),
-            f"{config}/environment.d/starship.conf": File(
-                source_file="home/shell/starship.conf", owner="tanren"
-            ),
         }

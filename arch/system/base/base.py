@@ -68,5 +68,4 @@ class Base(decman.Module):
     def files(self) -> dict[str, File]:
         return {
             "/etc/nftables.conf": File(source_file=f"{here}/nftables.conf"),
-            "/etc/systemd/zram-generator.conf": File(source_file=f"{here}/zram-generator.conf"),
         }

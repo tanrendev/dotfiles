@@ -35,12 +35,6 @@ class Desktop(decman.Module):
         return {"bluetooth.service", "power-profiles-daemon.service"}
 
     def files(self) -> dict[str, File]:
-        policies = File(source_file=f"{here}/policies.json")
         return {
-            "/etc/UPower/UPower.conf": File(source_file=f"{here}/UPower.conf"),
-            "/etc/bluetooth/main.conf": File(source_file=f"{here}/main.conf"),
-            "/etc/fonts/conf.d/52-default-fonts.conf": File(
-                source_file=f"{here}/52-default-fonts.conf"
-            ),
-            "/etc/brave/policies/managed/extra.json": policies,
+            "/etc/brave/policies/managed/extra.json": File(source_file=f"{here}/policies.json"),
         }

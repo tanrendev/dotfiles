@@ -18,7 +18,4 @@ class Hardware(decman.Module):
         return {"thermald.service"}
 
     def files(self) -> dict[str, File]:
-        return {
-            "/etc/environment": File(source_file=f"{here}/environment"),
-            "/etc/tmpfiles.d/battery.conf": File(source_file=f"{here}/battery.conf"),
-        }
+        return {"/etc/tmpfiles.d/battery.conf": File(source_file=f"{here}/battery.conf")}

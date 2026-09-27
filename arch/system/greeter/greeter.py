@@ -11,7 +11,7 @@ class Greeter(decman.Module):
 
     @pacman.packages
     def pacman_packages(self) -> set[str]:
-        return {"accountsservice", "greetd"}
+        return {"accountsservice", "gnome-keyring", "greetd"}
 
     @aur.packages
     def aur_packages(self) -> set[str]:
@@ -24,6 +24,7 @@ class Greeter(decman.Module):
     def files(self) -> dict[str, File]:
         return {
             "/etc/greetd/config.toml": File(source_file=f"{here}/config.toml"),
+            "/etc/pam.d/greetd": File(source_file=f"{here}/greetd.pam"),
             "/var/lib/noctalia-greeter/greeter.toml": File(
                 source_file=f"{here}/greeter.toml", owner="greeter"
             ),

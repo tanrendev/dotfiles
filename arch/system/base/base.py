@@ -34,6 +34,7 @@ class Base(decman.Module):
             "mkinitcpio",
             "nano",
             "networkmanager",
+            "openssh",
             "pacman-contrib",
             "pciutils",
             "pipewire",

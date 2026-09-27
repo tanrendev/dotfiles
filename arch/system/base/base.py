@@ -1,9 +1,7 @@
 import decman
-from decman import File
 from decman.extras.users import User, UserManager
 from decman.plugins import aur, pacman, systemd
 
-here = "system/base"
 users = UserManager()
 users.add_user(User(username="tanren", shell="/usr/bin/fish", groups=None))
 
@@ -36,7 +34,6 @@ class Base(decman.Module):
             "mkinitcpio",
             "nano",
             "networkmanager",
-            "nftables",
             "pacman-contrib",
             "pciutils",
             "pipewire",
@@ -45,6 +42,7 @@ class Base(decman.Module):
             "pipewire-pulse",
             "sof-firmware",
             "sudo",
+            "ufw",
             "usbutils",
             "wget",
             "wireplumber",
@@ -60,12 +58,7 @@ class Base(decman.Module):
     def units(self) -> set[str]:
         return {
             "NetworkManager.service",
-            "nftables.service",
             "paccache.timer",
             "systemd-timesyncd.service",
-        }
-
-    def files(self) -> dict[str, File]:
-        return {
-            "/etc/nftables.conf": File(source_file=f"{here}/nftables.conf"),
+            "ufw.service",
         }

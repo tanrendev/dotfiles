@@ -17,9 +17,9 @@ class Kitty(decman.Module):
         return {
             f"{config}/kitty.conf": File(source_file="home/kitty/kitty.conf", owner="tanren"),
             f"{config}/dark-theme.auto.conf": File(
-                source_file="../home/kitty/orikalk-lapis-dark.conf", owner="tanren"
+                source_file="home/kitty/orikalk-lapis-dark.conf", owner="tanren"
             ),
             f"{config}/light-theme.auto.conf": File(
-                source_file="../home/kitty/orikalk-lapis-light.conf", owner="tanren"
+                source_file="home/kitty/orikalk-lapis-light.conf", owner="tanren"
             ),
         }

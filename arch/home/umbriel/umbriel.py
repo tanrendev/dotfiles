@@ -24,6 +24,6 @@ class Umbriel(decman.Module):
         }
         for part in parts:
             files[f"{config}/{part}.toml"] = File(
-                source_file=f"../home/umbriel/{part}.toml", owner="tanren"
+                source_file=f"home/umbriel/{part}.toml", owner="tanren"
             )
         return files

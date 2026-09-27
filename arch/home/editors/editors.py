@@ -48,7 +48,7 @@ class Editors(decman.Module):
     def files(self) -> dict[str, File]:
         return {
             f"{home}/.config/nvim/init.lua": File(
-                source_file="../home/editors/nvim.lua", owner="tanren"
+                source_file="home/editors/nvim.lua", owner="tanren"
             ),
             f"{home}/.config/environment.d/editor.conf": File(
                 source_file="home/editors/editor.conf", owner="tanren"
@@ -60,7 +60,7 @@ class Editors(decman.Module):
             "/usr/local/bin/vi": "/usr/bin/nvim",
             "/usr/local/bin/vim": "/usr/bin/nvim",
             f"{home}/.config/Code/User/settings.json": Symlink(
-                f"{home}/Workshop/ostal/dotfiles/home/editors/vscode-settings.json",
+                f"{home}/Workshop/ostal/dotfiles/arch/home/editors/vscode-settings.json",
                 owner="tanren",
             ),
         }

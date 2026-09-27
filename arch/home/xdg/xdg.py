@@ -85,7 +85,7 @@ class Xdg(decman.Module):
     def directories(self) -> dict[str, Directory]:
         return {
             f"{home}/Pictures/Wallpapers": Directory(
-                source_directory="../home/wallpapers", bin_files=True, owner="tanren"
+                source_directory=f"{here}/wallpapers", bin_files=True, owner="tanren"
             ),
         }
 

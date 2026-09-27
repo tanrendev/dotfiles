@@ -27,11 +27,11 @@ class Noctalia(decman.Module):
             "/etc/systemd/user/noctalia.service": File(source_file="home/noctalia/noctalia.service"),
             f"{config}/config.toml": File(source_file="home/noctalia/config.toml", owner="tanren"),
             f"{config}/theme-mode-hook.sh": File(
-                source_file="../home/noctalia/theme-mode-hook.sh", owner="tanren"
+                source_file="home/noctalia/theme-mode-hook.sh", owner="tanren"
             ),
         }
         for palette in palettes:
             files[f"{config}/palettes/{palette}.json"] = File(
-                source_file=f"../home/noctalia/{palette}.json", owner="tanren"
+                source_file=f"home/noctalia/{palette}.json", owner="tanren"
             )
         return files

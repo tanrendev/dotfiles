@@ -22,7 +22,7 @@ class Gtk(decman.Module):
 
     def files(self) -> dict[str, File]:
         return {
-            patch: File(source_file="../home/gtk/papirus.sh"),
+            patch: File(source_file=f"{here}/papirus.sh"),
             "/etc/pacman.d/hooks/papirus.hook": File(source_file=f"{here}/papirus.hook"),
             "/etc/pacman.d/hooks/papirus-reset.hook": File(source_file=f"{here}/papirus-reset.hook"),
             "/etc/dconf/profile/user": File(source_file=f"{here}/dconf-profile"),

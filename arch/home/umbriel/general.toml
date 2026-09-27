@@ -1,0 +1,16 @@
+[general]
+mod_key = "Super"
+
+[workspaces]
+back_and_forth = true
+
+[layout]
+mode = "dwindle"
+gap = 5
+
+[appearance]
+border_width = 3
+animation_ms = 1
+
+[appearance.shadow]
+enabled = false

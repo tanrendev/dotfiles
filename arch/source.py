@@ -7,7 +7,6 @@ import decman
 from home.browsers.browsers import Browsers
 from home.dev import Dev
 from home.editors.editors import Editors
-from home.gtk.gtk import Gtk
 from home.kitty.kitty import Kitty
 from home.noctalia.noctalia import Noctalia
 from home.shell.shell import Shell
@@ -35,7 +34,6 @@ decman.modules += [
     Browsers(),
     Dev(),
     Editors(),
-    Gtk(),
     Kitty(),
     Noctalia(),
     Shell(),

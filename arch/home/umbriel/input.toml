@@ -9,5 +9,5 @@ natural_scroll = true
 follows_mouse = true
 
 [input.cursor]
-theme = "grimoire-cursors"
+theme = "Adwaita"
 size = 32

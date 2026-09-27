@@ -1,6 +1,6 @@
 import decman
 from decman import File
-from decman.plugins import aur, pacman, systemd
+from decman.plugins import pacman, systemd
 
 here = "system/desktop"
 
@@ -29,10 +29,6 @@ class Desktop(decman.Module):
             "upower",
             "xdg-desktop-portal-gtk",
         }
-
-    @aur.packages
-    def aur_packages(self) -> set[str]:
-        return {"otf-departure-mono"}
 
     @systemd.units
     def units(self) -> set[str]:

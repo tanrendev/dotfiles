@@ -1,9 +1,3 @@
-[bar.default]
-start = ["tanren/familiar:owl", "launcher", "wallpaper", "workspaces"]
-
-[hooks]
-theme_mode_changed = "bash ~/.config/noctalia/theme-mode-hook.sh"
-
 [idle.behavior.lock]
 action = "lock"
 enabled = true
@@ -17,13 +11,9 @@ timeout = 660
 [location]
 auto_locate = true
 
-[plugin_settings."tanren/patina"]
-dark = "~/Pictures/Wallpapers/dark.png"
-light = "~/Pictures/Wallpapers/light.jpg"
-
 [plugins]
 auto_update = "none"
-enabled = ["noctalia/kaomoji", "tanren/familiar", "tanren/patina"]
+enabled = ["noctalia/kaomoji"]
 
 [[plugins.source]]
 enabled = true
@@ -31,21 +21,8 @@ kind = "git"
 location = "https://github.com/noctalia-dev/official-plugins"
 name = "official"
 
-[[plugins.source]]
-enabled = true
-kind = "git"
-location = "https://github.com/tanrendev/familiar"
-name = "familiar"
-
-[[plugins.source]]
-enabled = true
-kind = "git"
-location = "https://github.com/tanrendev/patina"
-name = "patina"
-
 [shell]
 clipboard_enabled = true
-font_family = "Departure Mono"
 launch_apps_as_systemd_services = true
 polkit_agent = true
 
@@ -55,12 +32,6 @@ auto_sync = true
 [theme]
 mode = "dark"
 wallpaper_scheme = "m3-content"
-
-[theme.templates]
-builtin_ids = ["btop", "cava", "gtk3", "gtk4", "kcolorscheme", "qt", "starship"]
-
-[wallpaper.default]
-path = "~/Pictures/Wallpapers/dark.png"
 
 [weather]
 enabled = true

@@ -11,15 +11,7 @@ class Hardware(decman.Module):
 
     @pacman.packages
     def pacman_packages(self) -> set[str]:
-        return {
-            "ffmpeg",
-            "intel-gpu-tools",
-            "intel-media-driver",
-            "libva-utils",
-            "mesa",
-            "thermald",
-            "vulkan-intel",
-        }
+        return {"intel-media-driver", "mesa", "thermald", "vulkan-intel"}
 
     @systemd.units
     def units(self) -> set[str]:

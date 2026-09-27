@@ -9,9 +9,6 @@
   "update.mode": "none",
   "update.showReleaseNotes": false,
   "npm.fetchOnlinePackageInfo": false,
-  "gitlens.telemetry.enabled": false,
-  "redhat.telemetry.enabled": false,
-  "claudeCode.preferredLocation": "panel",
   "git.confirmSync": false,
   "json.schemaDownload.trustedDomains": {
     "https://raw.githubusercontent.com/microsoft/vscode/": true,
@@ -19,20 +16,10 @@
     "https://www.schemastore.org/": true,
     "https://json.schemastore.org/": true,
     "https://json-schema.org/": true,
-    "https://developer.microsoft.com/json-schemas/": true,
-    "https://biomejs.dev": true
+    "https://developer.microsoft.com/json-schemas/": true
   },
   "explorer.confirmDelete": false,
   "git.autofetch": true,
   "explorer.confirmDragAndDrop": false,
-  "ty.importStrategy": "fromEnvironment",
-  "luau-lsp.platform.type": "standard",
-  "luau-lsp.types.definitionFiles": {
-    "noctalia": "/home/tanren/Workshop/ostal/familiar/noctalia.d.luau"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "workbench.startupEditor": "none",
-  "claudeCode.hideOnboarding": true
+  "workbench.startupEditor": "none"
 }

@@ -96,7 +96,7 @@
 
 # apps
 "Mod+Space" = "spawn:noctalia msg panel-toggle launcher"
-"Mod+B" = "spawn:librewolf"
+"Mod+B" = "spawn:brave-origin"
 "Mod+E" = "spawn:thunar"
 
 # noctalia and panels

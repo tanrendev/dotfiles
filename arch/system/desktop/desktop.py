@@ -51,6 +51,4 @@ class Desktop(decman.Module):
                 source_file=f"{here}/52-default-fonts.conf"
             ),
             "/etc/brave/policies/managed/extra.json": policies,
-            "/etc/chromium/policies/managed/extra.json": policies,
-            "/etc/opt/chrome/policies/managed/extra.json": policies,
         }

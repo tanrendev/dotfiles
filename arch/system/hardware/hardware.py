@@ -2,8 +2,6 @@ import decman
 from decman import File
 from decman.plugins import pacman, systemd
 
-here = "system/hardware"
-
 
 class Hardware(decman.Module):
     def __init__(self):
@@ -18,4 +16,4 @@ class Hardware(decman.Module):
         return {"thermald.service"}
 
     def files(self) -> dict[str, File]:
-        return {"/etc/tmpfiles.d/battery.conf": File(source_file=f"{here}/battery.conf")}
+        return {"/var/lib/upower/charging-threshold-status": File(content="1")}

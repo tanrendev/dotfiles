@@ -10,7 +10,9 @@ gap = 5
 
 [appearance]
 border_width = 3
-animation_ms = 1
 
 [appearance.shadow]
+enabled = false
+
+[animation]
 enabled = false

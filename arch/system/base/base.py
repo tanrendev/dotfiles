@@ -59,6 +59,7 @@ class Base(decman.Module):
     def units(self) -> set[str]:
         return {
             "NetworkManager.service",
+            "btrfs-scrub@-.timer",
             "paccache.timer",
             "systemd-timesyncd.service",
             "ufw.service",

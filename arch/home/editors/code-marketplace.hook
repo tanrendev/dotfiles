@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Path
+Target = usr/lib/code/product.json
+
+[Action]
+Description = Pointing Code - OSS at the Visual Studio Marketplace...
+When = PostTransaction
+Depends = jq
+Exec = /usr/local/lib/code-marketplace

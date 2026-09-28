@@ -9,3 +9,8 @@ class Boot(decman.Module):
     @pacman.packages
     def pacman_packages(self) -> set[str]:
         return {"cryptsetup", "limine"}
+
+    def after_update(self, store):
+        table = decman.prg(["dmsetup", "table", "root"], pty=False)
+        if "allow_discards" not in table:
+            decman.prg(["cryptsetup", "--allow-discards", "--persistent", "refresh", "root"])

@@ -1,8 +1,6 @@
 fish_add_path -g ~/.local/bin
 
 if status is-interactive
-    set -gx CARAPACE_MATCH 1
-
     alias eza 'eza --icons auto --git'
     alias la 'eza -a'
     alias ll 'eza -l'
@@ -20,7 +18,6 @@ if status is-interactive
         starship init fish | source
     end
 
-    carapace _carapace fish | source
     atuin init fish --disable-up-arrow --disable-ai | source
     direnv hook fish | source
 end

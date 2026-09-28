@@ -1,6 +1,6 @@
 import decman
 from decman import File
-from decman.plugins import aur, pacman
+from decman.plugins import pacman
 
 config = "/home/tanren/.config"
 
@@ -35,10 +35,6 @@ class Shell(decman.Module):
             "zip",
             "zoxide",
         }
-
-    @aur.packages
-    def aur_packages(self) -> set[str]:
-        return {"carapace-bin"}
 
     def files(self) -> dict[str, File]:
         return {

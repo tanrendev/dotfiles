@@ -2,7 +2,6 @@
 set -eu
 
 product=/usr/lib/code/product.json
-shared=/usr/lib/code/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js
 
 jq '.extensionsGallery = {
   nlsBaseUrl: "https://www.vscode-unpkg.net/_lp/",
@@ -15,5 +14,3 @@ jq '.extensionsGallery = {
   mcpUrl: "https://main.vscode-cdn.net/mcp/servers.json"
 }' "$product" > "$product.new"
 mv "$product.new" "$product"
-
-sed -i 's|import("node-ovsx-sign")|import("@vscode/vsce-sign")|' "$shared"

@@ -3,6 +3,7 @@
   "extensions.autoUpdate": "off",
   "extensions.autoCheckUpdates": false,
   "extensions.ignoreRecommendations": true,
+  "extensions.verifySignature": false,
   "telemetry.telemetryLevel": "off",
   "workbench.enableExperiments": false,
   "workbench.settings.enableNaturalLanguageSearch": false,

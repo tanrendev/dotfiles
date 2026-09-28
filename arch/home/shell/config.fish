@@ -1,3 +1,5 @@
+fish_add_path -g ~/.local/bin
+
 if status is-interactive
     set -gx CARAPACE_MATCH 1
 

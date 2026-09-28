@@ -1,4 +1,6 @@
 fish_add_path -g ~/.local/bin
+set -gx EDITOR nano
+set -gx VISUAL nano
 
 if status is-interactive
     alias eza 'eza --icons auto --git'

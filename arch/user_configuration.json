@@ -118,7 +118,7 @@
                         "type": "primary"
                     }
                 ],
-                "wipe": false
+                "wipe": true
             }
         ],
         "disk_encryption": {

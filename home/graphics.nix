@@ -12,7 +12,11 @@
     ))
     fontforge-gtk
     gimp
+    grim
     hyprpicker
     inkscape
+    pinta
+    satty
+    slurp
   ];
 }

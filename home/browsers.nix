@@ -25,6 +25,7 @@ in
 
   home.packages = with pkgs; [
     brave
+    chromium
     pywalfox-native
     tor-browser
   ];

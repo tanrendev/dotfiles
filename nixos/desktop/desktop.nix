@@ -36,6 +36,8 @@
 
     gpu-screen-recorder.enable = true;
 
+    localsend.enable = true;
+
     thunar = {
       enable = true;
       plugins = with pkgs; [
@@ -105,6 +107,8 @@
   fonts = {
     packages = with pkgs; [
       departure-mono
+      ia-writer-duospace
+      ia-writer-quattro
       nerd-fonts.jetbrains-mono
       noto-fonts
       noto-fonts-cjk-sans
@@ -148,6 +152,8 @@
     tumbler.enable = true;
     udisks2.enable = true;
     gvfs.enable = true;
+
+    printing.enable = true;
   };
 
   hardware.bluetooth = {

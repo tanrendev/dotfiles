@@ -98,6 +98,16 @@
 
   virtualisation.docker.enable = true;
 
+  services = {
+    fwupd.enable = true;
+    thermald.enable = true;
+
+    locate = {
+      enable = true;
+      package = pkgs.plocate;
+    };
+  };
+
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [

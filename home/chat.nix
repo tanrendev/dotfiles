@@ -11,7 +11,10 @@
     };
   };
 
-  home.packages = [ pkgs.telegram-desktop ];
+  home.packages = with pkgs; [
+    signal-desktop
+    telegram-desktop
+  ];
 
   xdg.mimeApps.defaultApplications."x-scheme-handler/tg" = "org.telegram.desktop.desktop";
 }

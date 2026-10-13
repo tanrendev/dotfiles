@@ -20,24 +20,34 @@
   };
 
   home.packages = with pkgs; [
+    awscli2
     bun
+    dotnet-runtime_9
     gcc
     glab
     gnumake
     go
     godot
+    golangci-lint
+    jdk17
+    lazydocker
     lua-language-server
     luaPackages.luacheck
+    luarocks
+    mise
     nil
     nix-output-monitor
     nodejs
     nvd
+    opentofu
     pkg-config
+    ruby
     rustup
     shellcheck
     shfmt
     stylua
     taplo
+    tree-sitter
     uv
     yaml-language-server
   ];

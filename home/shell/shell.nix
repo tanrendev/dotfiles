@@ -82,13 +82,25 @@
   };
 
   home.packages = with pkgs; [
+    bluetui
+    brightnessctl
+    dust
     fd
+    gum
+    htop
+    inxi
     jq
     ouch
     p7zip
+    pamixer
+    playerctl
     sd
+    tesseract
+    tree
     unzip
+    whois
     wl-clipboard
+    xmlstarlet
     zip
   ];
 }

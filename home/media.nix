@@ -16,10 +16,15 @@
       };
     };
 
+    obs-studio.enable = true;
     swayimg.enable = true;
   };
 
-  home.packages = [ pkgs.vlc ];
+  home.packages = with pkgs; [
+    kdePackages.kdenlive
+    spotify
+    vlc
+  ];
 
   xdg.mimeApps.defaultApplications =
     lib.genAttrs [

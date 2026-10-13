@@ -27,26 +27,41 @@
           anthropic.claude-code
           batisteo.vscode-django
           biomejs.biome
+          bradlc.vscode-tailwindcss
           charliermarsh.ruff
           davidanson.vscode-markdownlint
+          donjayamanne.githistory
           eamodio.gitlens
           ecmel.vscode-html-css
           esbenp.prettier-vscode
           geequlim.godot-tools
+          github.vscode-github-actions
+          gitlab.gitlab-workflow
           golang.go
           jnoortheen.nix-ide
           jock.svg
+          mechatroner.rainbow-csv
+          ms-azuretools.vscode-containers
           ms-azuretools.vscode-docker
+          ms-python.debugpy
+          ms-python.mypy-type-checker
           ms-python.python
+          ms-python.vscode-pylance
+          ms-python.vscode-python-envs
+          ms-vscode-remote.remote-containers
           ms-vscode.cmake-tools
           ms-vscode.cpptools
           naumovs.color-highlight
           redhat.vscode-yaml
           rust-lang.rust-analyzer
+          stylelint.vscode-stylelint
           sumneko.lua
           tamasfe.even-better-toml
           timonwong.shellcheck
+          usernamehw.errorlens
+          vscode-icons-team.vscode-icons
           wholroyd.jinja
+          yzhang.markdown-all-in-one
         ]
         ++ [
           (pkgs.vscode-utils.extensionFromVscodeMarketplace {

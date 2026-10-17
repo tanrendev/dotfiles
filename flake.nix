@@ -51,6 +51,7 @@
     let
       systems = [ "x86_64-linux" ];
       forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
+      lyngenPkgs = self.nixosConfigurations.lyngen.pkgs;
     in
     {
       formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);
@@ -58,7 +59,7 @@
       overlays.default = import ./pkgs;
 
       packages = forAllSystems (pkgs: {
-        inherit (self.nixosConfigurations.lyngen.pkgs) grok-bot signal-desktop;
+        inherit (lyngenPkgs) grok-bot signal-desktop vscode;
         update-debs = pkgs.callPackage ./pkgs/update-debs/package.nix { };
       });
 

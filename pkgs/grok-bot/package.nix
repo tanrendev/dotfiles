@@ -81,6 +81,12 @@ stdenv.mkDerivation (finalAttrs: {
     (lib.getLib systemd)
   ];
 
+  appendRunpaths = map (pkg: "${lib.getLib pkg}/lib") [
+    libGL
+    pciutils
+    vulkan-loader
+  ];
+
   runtimeDependencies = [
     gtk3
     libGL

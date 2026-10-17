@@ -1,0 +1,289 @@
+[
+  {
+    "publisher": "anthropic",
+    "name": "claude-code",
+    "version": "2.1.296",
+    "arch": "linux-x64",
+    "hash": "sha256-MRdsSiopFEZzFw37mv/CWJr5l9AVMvH3+X+Lk5maPRE="
+  },
+  {
+    "publisher": "astral-sh",
+    "name": "ty",
+    "version": "2026.78.0",
+    "arch": "linux-x64",
+    "hash": "sha256-jAqPR49NcmyM8/3juSRJ0DalC3eo2HZpEihfVqkQtoo="
+  },
+  {
+    "publisher": "batisteo",
+    "name": "vscode-django",
+    "version": "1.15.0",
+    "arch": "",
+    "hash": "sha256-WBZsZNcq9OY30uaksfcRmCvHcugemMhsJ6d6/IncR5s="
+  },
+  {
+    "publisher": "biomejs",
+    "name": "biome",
+    "version": "3.7.1",
+    "arch": "",
+    "hash": "sha256-aGTk1t5r/9hoJ8KjSvLkhnhvvhgTnA5P70QwNV1qDh4="
+  },
+  {
+    "publisher": "bradlc",
+    "name": "vscode-tailwindcss",
+    "version": "0.16.0",
+    "arch": "",
+    "hash": "sha256-1adOWrj7/YAG+8y82NR9RM33lqU6xEkfP8pMc5ctF5c="
+  },
+  {
+    "publisher": "charliermarsh",
+    "name": "ruff",
+    "version": "2026.86.0",
+    "arch": "linux-x64",
+    "hash": "sha256-5zLiGFUh+1Ja2ry8dI12aHwsgNzIp0zc2qqJb7q0LHc="
+  },
+  {
+    "publisher": "davidanson",
+    "name": "vscode-markdownlint",
+    "version": "0.62.1",
+    "arch": "",
+    "hash": "sha256-zR0pWpxWTTxeAEfX49vlhaTPc2YZxcJCv62abriPtRg="
+  },
+  {
+    "publisher": "donjayamanne",
+    "name": "githistory",
+    "version": "0.6.20",
+    "arch": "",
+    "hash": "sha256-nEdYS9/cMS4dcbFje23a47QBZr9eDK3dvtkFWqA+OHU="
+  },
+  {
+    "publisher": "eamodio",
+    "name": "gitlens",
+    "version": "19.3.0",
+    "arch": "",
+    "hash": "sha256-juj2pfpJQ18nBZpsZaSwXlIoukkPH3BNTPbiV0E/b8s="
+  },
+  {
+    "publisher": "ecmel",
+    "name": "vscode-html-css",
+    "version": "2.0.14",
+    "arch": "",
+    "hash": "sha256-0IAwX/KPh1CKCQENcztDnCkbYDWipO09zl3Qcb1RPfA="
+  },
+  {
+    "publisher": "esbenp",
+    "name": "prettier-vscode",
+    "version": "12.4.0",
+    "arch": "",
+    "hash": "sha256-RtIqVns16+W9/9coBFd0LNZ+ZdfhslC7d1qyvoZHmkI="
+  },
+  {
+    "publisher": "geequlim",
+    "name": "godot-tools",
+    "version": "2.7.1",
+    "arch": "",
+    "hash": "sha256-TNCMSmZdBXxAHkcFLpTDkCzaXNO4yvkCfQ8Xrb9gquo="
+  },
+  {
+    "publisher": "github",
+    "name": "vscode-github-actions",
+    "version": "0.32.3",
+    "arch": "",
+    "hash": "sha256-BYRiFiyynU0iNB2RLBXc+iGUd0sekvww/LoabKPJGr0="
+  },
+  {
+    "publisher": "gitlab",
+    "name": "gitlab-workflow",
+    "version": "7.2.0",
+    "arch": "",
+    "hash": "sha256-kIse70FkeQKYuwZuUSQJUaujQIt/Azynp0kyd3J+4eQ="
+  },
+  {
+    "publisher": "golang",
+    "name": "go",
+    "version": "0.56.1",
+    "arch": "",
+    "hash": "sha256-RTZdpdEoTzUYspSfIYSB8envYiGz2Zmi4wgsy7Yeh0s="
+  },
+  {
+    "publisher": "jnoortheen",
+    "name": "nix-ide",
+    "version": "0.5.13",
+    "arch": "",
+    "hash": "sha256-0pMMnYFX+Ghs42Tvfcv9QqwhrEhCjIa7+6xJ51Fa0Dk="
+  },
+  {
+    "publisher": "jock",
+    "name": "svg",
+    "version": "1.5.4",
+    "arch": "",
+    "hash": "sha256-LZLKUmYSnlgypLXKFOGezMepV10t35unpEnCMaLRjeU="
+  },
+  {
+    "publisher": "JohnnyMorganz",
+    "name": "luau-lsp",
+    "version": "1.70.1",
+    "arch": "linux-x64",
+    "hash": "sha256-hI/ClP00EJhp3DOp90L+hWDSpmnqyYA6Rq/elvycOtg="
+  },
+  {
+    "publisher": "mechatroner",
+    "name": "rainbow-csv",
+    "version": "3.24.1",
+    "arch": "",
+    "hash": "sha256-xZpK6pJNXnxudauzJihEi9VASRXi89+hn7vfF33qRgY="
+  },
+  {
+    "publisher": "ms-azuretools",
+    "name": "vscode-containers",
+    "version": "2.5.2",
+    "arch": "",
+    "hash": "sha256-ERpwIOxLZxelWPRFYwsaEcbnOxW3cC3vGOKIkg92ztw="
+  },
+  {
+    "publisher": "ms-azuretools",
+    "name": "vscode-docker",
+    "version": "2.0.0",
+    "arch": "",
+    "hash": "sha256-Yxysekp9nC91g7M5oXppOF+Rf4Jf/PD+X3inmdVfVmo="
+  },
+  {
+    "publisher": "ms-python",
+    "name": "debugpy",
+    "version": "2026.6.0",
+    "arch": "linux-x64",
+    "hash": "sha256-OuQX94vOF5krng77oWCkOoWotpW9OH4VDU3yTjZsewE="
+  },
+  {
+    "publisher": "ms-python",
+    "name": "mypy-type-checker",
+    "version": "2026.6.0",
+    "arch": "",
+    "hash": "sha256-Sis9Tm5uWTyAIJnHvdh/dwOs580YprqDQ3XP8FhWvw0="
+  },
+  {
+    "publisher": "ms-python",
+    "name": "python",
+    "version": "2026.8.0",
+    "arch": "linux-x64",
+    "hash": "sha256-0Pg8myZzrF+nl0+8yFknza6X+1M9KuvB2wijjuBRnj8="
+  },
+  {
+    "publisher": "ms-python",
+    "name": "vscode-pylance",
+    "version": "2026.4.1",
+    "arch": "",
+    "hash": "sha256-PmydC6DGaA5u8o0a9cbhOETjmoceVATL+qrttc0NjPs="
+  },
+  {
+    "publisher": "ms-python",
+    "name": "vscode-python-envs",
+    "version": "1.38.0",
+    "arch": "linux-x64",
+    "hash": "sha256-VKqK7Yh7LCtbS7UR0P5Evrg+LMBHw8LBllIQg92VqdI="
+  },
+  {
+    "publisher": "ms-vscode-remote",
+    "name": "remote-containers",
+    "version": "0.469.0",
+    "arch": "",
+    "hash": "sha256-kvmQlazS+Zuubx67b8kvy4P8U3b5WQqRd/GCxW+0gsI="
+  },
+  {
+    "publisher": "ms-vscode",
+    "name": "cmake-tools",
+    "version": "1.24.42",
+    "arch": "",
+    "hash": "sha256-FNbfOhFhmRXVofoqRs8lTf9jTuNOBvakZGaKr6fVXrs="
+  },
+  {
+    "publisher": "ms-vscode",
+    "name": "cpptools",
+    "version": "1.34.4",
+    "arch": "linux-x64",
+    "hash": "sha256-og4lqDIo14VKViPEnwDDNzd4K/3eh0/v9Bf+LZtSwAI="
+  },
+  {
+    "publisher": "naumovs",
+    "name": "color-highlight",
+    "version": "2.8.0",
+    "arch": "",
+    "hash": "sha256-mT2P1lEdW66YkDRN6fi0rmmvvyBfXiJjAUHns8a8ipE="
+  },
+  {
+    "publisher": "oven",
+    "name": "bun-vscode",
+    "version": "0.0.32",
+    "arch": "",
+    "hash": "sha256-VlruOHiF5/wVhVVW1rq6DEc90u3IwbxD/tpTXyphD+U="
+  },
+  {
+    "publisher": "redhat",
+    "name": "vscode-yaml",
+    "version": "1.25.0",
+    "arch": "",
+    "hash": "sha256-KoM0gNl1TYOvtk33WMUHNSAddZtTzbKb57eoEU3KKuQ="
+  },
+  {
+    "publisher": "rust-lang",
+    "name": "rust-analyzer",
+    "version": "0.3.3073",
+    "arch": "linux-x64",
+    "hash": "sha256-+423z586ihe6Woc/rXDWUK0ykAqKhGVInC2Y/cOJaBw="
+  },
+  {
+    "publisher": "stylelint",
+    "name": "vscode-stylelint",
+    "version": "2.2.1",
+    "arch": "",
+    "hash": "sha256-VnJ2OZe2KPo/QfZquxDZ3SMQncRWnAHBTTtfdJVBlpo="
+  },
+  {
+    "publisher": "sumneko",
+    "name": "lua",
+    "version": "3.19.1",
+    "arch": "linux-x64",
+    "hash": "sha256-sHAp5d91zgdU3OEif5ybNDIdOOoT5hQQkT2XC3hXDd4="
+  },
+  {
+    "publisher": "tamasfe",
+    "name": "even-better-toml",
+    "version": "0.21.2",
+    "arch": "",
+    "hash": "sha256-IbjWavQoXu4x4hpEkvkhqzbf/NhZpn8RFdKTAnRlCAg="
+  },
+  {
+    "publisher": "timonwong",
+    "name": "shellcheck",
+    "version": "0.46.4",
+    "arch": "linux-x64",
+    "hash": "sha256-o6n/qsu+HhSRnpnHLWzGJn374RnMz3W/jUQQhAjh5LU="
+  },
+  {
+    "publisher": "usernamehw",
+    "name": "errorlens",
+    "version": "3.29.0",
+    "arch": "",
+    "hash": "sha256-kK9Axp2tMUGZ/04VtL5hzg35zvnRIjHpnmCJt9OhHQ8="
+  },
+  {
+    "publisher": "vscode-icons-team",
+    "name": "vscode-icons",
+    "version": "13.0.0",
+    "arch": "",
+    "hash": "sha256-DzjqQaepOV150spxK1kwAJQW+mCbmnf565AkcSUliYM="
+  },
+  {
+    "publisher": "wholroyd",
+    "name": "jinja",
+    "version": "0.0.10",
+    "arch": "",
+    "hash": "sha256-o8wawmBQLkYzuc18bHi+Gd6v2sboqgQb3hOhQo8gzqo="
+  },
+  {
+    "publisher": "yzhang",
+    "name": "markdown-all-in-one",
+    "version": "3.6.3",
+    "arch": "",
+    "hash": "sha256-xJhbFQSX1DDDp8iE/R8ep+1t5IRusBkvjHcNmvjrboM="
+  }
+]

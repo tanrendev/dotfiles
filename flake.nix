@@ -61,6 +61,7 @@
       packages = forAllSystems (pkgs: {
         inherit (lyngenPkgs) grok-bot signal-desktop vscode;
         update-debs = pkgs.callPackage ./pkgs/update-debs/package.nix { };
+        update-vscode-extensions = lyngenPkgs.callPackage ./pkgs/update-vscode-extensions/package.nix { };
       });
 
       nixosConfigurations.lyngen = nixpkgs.lib.nixosSystem {

@@ -29,6 +29,7 @@
     go
     godot
     golangci-lint
+    grok-bot
     jdk17
     lazydocker
     lua-language-server

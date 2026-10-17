@@ -2,3 +2,4 @@ rules:
   undocumented-permissions:
     ignore:
       - update-flake-lock.yml
+      - update-debs.yml

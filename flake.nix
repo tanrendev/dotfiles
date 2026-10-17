@@ -47,13 +47,20 @@
   };
 
   outputs =
-    { nixpkgs, ... }@inputs:
+    { self, nixpkgs, ... }@inputs:
     let
       systems = [ "x86_64-linux" ];
       forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
     in
     {
       formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);
+
+      overlays.default = import ./pkgs;
+
+      packages = forAllSystems (pkgs: {
+        inherit (self.nixosConfigurations.lyngen.pkgs) grok-bot signal-desktop;
+        update-debs = pkgs.callPackage ./pkgs/update-debs/package.nix { };
+      });
 
       nixosConfigurations.lyngen = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };

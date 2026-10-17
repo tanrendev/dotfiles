@@ -1,0 +1,30 @@
+name: Update debs
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Bump debs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: DeterminateSystems/nix-installer-action@ef8a148080ab6020fd15196c2084a2eea5ff2d25
+      - run: nix run .#update-debs -- pkgs/signal-desktop pkgs/grok-bot
+      - run: nix build --no-link .#signal-desktop .#grok-bot
+      - run: .github/scripts/update-debs-pr.sh
+        env:
+          GH_TOKEN: ${{ secrets.FLAKE_UPDATE_TOKEN || github.token }}

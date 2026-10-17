@@ -1,0 +1,9 @@
+{
+  "repo": "https://updates.signal.org/desktop/apt",
+  "suite": "xenial",
+  "component": "main",
+  "package": "signal-desktop",
+  "version": "8.31.0",
+  "url": "https://updates.signal.org/desktop/apt/pool/s/signal-desktop/signal-desktop_8.31.0_amd64.deb",
+  "hash": "sha256-q484WybrBrbZ3I23yLngo1xSETmpsRueEQ369b/nWZY="
+}

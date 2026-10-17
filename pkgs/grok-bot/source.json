@@ -1,0 +1,9 @@
+{
+  "repo": "https://downloads.cursor.com/aptrepo",
+  "suite": "grok-bot",
+  "component": "main",
+  "package": "grok-bot",
+  "version": "0.71.2",
+  "url": "https://downloads.cursor.com/aptrepo/pool/grok-bot/g/gr/grok-bot_0.71.2_amd64.deb",
+  "hash": "sha256-oFJtdaPoUu1Z5QeIm8OqalGFqNBDYyzo3sqYsEqwY0g="
+}

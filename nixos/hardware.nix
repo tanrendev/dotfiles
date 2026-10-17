@@ -5,6 +5,9 @@
   pkgs,
   ...
 }:
+let
+  luks = "luks-17b54c25-8983-4852-87f2-899920585bde";
+in
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
@@ -14,9 +17,12 @@
         "xhci_pci"
         "nvme"
         "usbhid"
+        "usb_storage"
+        "sd_mod"
+        "rtsx_pci_sdmmc"
       ];
       kernelModules = [ ];
-      luks.devices.cryptroot.device = "/dev/disk/by-partlabel/root";
+      luks.devices.${luks}.device = "/dev/disk/by-uuid/17b54c25-8983-4852-87f2-899920585bde";
     };
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
@@ -24,11 +30,21 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/mapper/cryptroot";
-      fsType = "ext4";
+      device = "/dev/mapper/${luks}";
+      fsType = "btrfs";
+    };
+    "/home" = {
+      device = "/dev/mapper/${luks}";
+      fsType = "btrfs";
+      options = [ "subvol=home" ];
+    };
+    "/nix" = {
+      device = "/dev/mapper/${luks}";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-partlabel/EFI";
+      device = "/dev/disk/by-uuid/BFE4-546A";
       fsType = "vfat";
       options = [
         "fmask=0077"

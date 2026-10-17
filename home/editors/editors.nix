@@ -33,14 +33,21 @@ let
     pin:
     let
       id = lib.toLower "${pin.publisher}.${pin.name}";
+      ref = lib.getAttrs [
+        "publisher"
+        "name"
+        "version"
+        "arch"
+        "hash"
+      ] pin;
       base =
         if lib.elem id patchedInNixpkgs then
           (lib.getAttrFromPath (lib.splitString "." id) pkgs.vscode-extensions).overrideAttrs {
             inherit (pin) version;
-            src = pkgs.vscode-utils.fetchVsixFromVscodeMarketplace pin;
+            src = pkgs.vscode-utils.fetchVsixFromVscodeMarketplace ref;
           }
         else
-          pkgs.vscode-utils.buildVscodeMarketplaceExtension { mktplcRef = pin; };
+          pkgs.vscode-utils.buildVscodeMarketplaceExtension { mktplcRef = ref; };
     in
     base.overrideAttrs (storeFixes.${id} or (_: { }));
 in

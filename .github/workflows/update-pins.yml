@@ -1,4 +1,4 @@
-name: Update debs
+name: Update pins
 
 on:
   schedule:
@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   update:
-    name: Bump debs
+    name: Bump pins
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -24,7 +24,15 @@ jobs:
           persist-credentials: false
       - uses: DeterminateSystems/nix-installer-action@ef8a148080ab6020fd15196c2084a2eea5ff2d25
       - run: nix run .#update-debs -- pkgs/signal-desktop pkgs/grok-bot pkgs/vscode
-      - run: nix build --no-link .#signal-desktop .#grok-bot .#vscode
-      - run: .github/scripts/update-debs-pr.sh
+      - run: nix run .#update-vscode-extensions -- home/editors/extensions.json pkgs/vscode/source.json
+      - run: nix flake update claude-code
+      - run: >-
+          nix build --no-link
+          .#signal-desktop
+          .#grok-bot
+          .#vscode
+          .#nixosConfigurations.lyngen.config.home-manager.users.tanren.home-files
+          .#nixosConfigurations.lyngen.config.home-manager.users.tanren.programs.claude-code.package
+      - run: .github/scripts/update-pins-pr.sh
         env:
           GH_TOKEN: ${{ secrets.FLAKE_UPDATE_TOKEN || github.token }}

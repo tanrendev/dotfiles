@@ -26,8 +26,7 @@ engine_ok() {
 extensions=$1
 vscode=$(jq -er .version "$2")
 vscode=${vscode%%-*}
-min_age_days=${MIN_AGE_DAYS:-7}
-cutoff=$(date --utc --date="-$min_age_days days" +%s)
+default_min_age_days=${MIN_AGE_DAYS:-7}
 
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
@@ -38,6 +37,9 @@ for ((i = 0; i < count; i++)); do
   name=$(jq -er ".[$i].name" "$extensions")
   current=$(jq -r ".[$i].version // empty" "$extensions")
   current_arch=$(jq -r ".[$i].arch // empty" "$extensions")
+  min_age_days=$(jq -r ".[$i].minAgeDays // empty" "$extensions")
+  min_age_days=${min_age_days:-$default_min_age_days}
+  cutoff=$(date --utc --date="-$min_age_days days" +%s)
   id="$publisher.$name"
 
   jq -n --arg id "$id" '{filters: [{criteria: [{filterType: 7, value: $id}]}], flags: 19}' >"$tmp/query.json"

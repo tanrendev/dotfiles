@@ -1,4 +1,4 @@
 rules:
   undocumented-permissions:
     ignore:
-      - update-debs.yml
+      - update-pins.yml

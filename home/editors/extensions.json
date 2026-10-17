@@ -2,9 +2,10 @@
   {
     "publisher": "anthropic",
     "name": "claude-code",
-    "version": "2.1.296",
+    "version": "2.1.301",
     "arch": "linux-x64",
-    "hash": "sha256-MRdsSiopFEZzFw37mv/CWJr5l9AVMvH3+X+Lk5maPRE="
+    "hash": "sha256-CxcRJM0kr9GWqHDqklgwnfv7l+a42NUl19uzIl/sxQA=",
+    "minAgeDays": 0
   },
   {
     "publisher": "astral-sh",
